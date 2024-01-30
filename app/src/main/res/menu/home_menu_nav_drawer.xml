@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:visible="false"
+            android:id="@+id/nav_change_password"
+            android:icon="@drawable/ic_forget_password"
+            android:title="@string/change_password" />
+        <item
+            android:id="@+id/nav_change_language"
+            android:icon="@drawable/ic_language"
+            android:title="@string/change_language"
+            android:visible="false" />
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@drawable/nav_printer"
+            android:title="@string/setting" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_new_logout"
+            android:title="@string/logout" />
+    </group>
+</menu>

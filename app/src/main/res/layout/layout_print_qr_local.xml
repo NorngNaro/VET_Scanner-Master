@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/layout_print_qr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:paddingBottom="24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:text="VIRAK BUNTHAM EXPRESS"
+            android:textColor="@android:color/black"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/layout_print_border"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/print_qr_branch_from"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/edit_text_padding"
+                android:text="Phnom Penh"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider_width"
+                android:background="@android:color/black" />
+
+            <TextView
+                android:id="@+id/print_qr_branch_to"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Bangkok"
+                android:textColor="@android:color/black"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider_width"
+                android:background="@android:color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/edit_text_padding">
+
+                <TextView
+                    android:id="@+id/print_qr_item_code"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical|start"
+                    android:text="BKK-0000070"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/print_qr_total_amount"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|end"
+                    android:text="10,000"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider_width"
+                android:background="@android:color/black" />
+
+            <TextView
+                android:id="@+id/print_qr_item_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/edit_text_padding"
+                android:text="វត្ថុស្រួយងាយបែកបាក់ Fragile Item"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider_width"
+                android:background="@android:color/black" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="ដឹកដល់ផ្ទះ"
+                        android:textColor="@android:color/black"
+                        android:textSize="17sp" />
+
+                    <ImageView
+                        android:id="@+id/print_qr_code_img_qr"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/image_content_desc"
+                        android:src="@drawable/qr_icon" />
+
+
+                </LinearLayout>
+
+
+            </FrameLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider_width"
+                android:background="@android:color/black" />
+
+            <TextView
+                android:id="@+id/print_qr_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/edit_text_padding"
+                android:text="10/11/2016"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider_width"
+                android:background="@android:color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="ថ្លៃផ្ញើ:"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/view_print_total_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Paid"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/view_print_qr_Paid_Check_print"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Paid"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/view_print_qr_COD_Check_print_Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="ថ្លៃទំនិញ:"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/view_print_qr_COD_Check_print"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="COD"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/print_qr_receiver"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/edit_text_padding"
+                android:text="081881887"
+                android:textColor="@android:color/black"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="24dp"
+                    android:paddingBottom="24dp"
+                    android:text="VIRAK BUNTHAM EXPRESS"
+                    android:textColor="@android:color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/view_layout_print_qr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/layout_print_border"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/divider_width"
+                        android:background="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/view_print_qr_branch_from"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/edit_text_padding"
+                        android:text="Phnom Penh"
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/divider_width"
+                        android:background="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/view_print_qr_branch_to"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/edit_text_padding"
+                        android:text="Bangkok"
+                        android:textColor="@android:color/black"
+                        android:textSize="38sp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/divider_width"
+                        android:background="@android:color/black" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/edit_text_padding">
+
+                        <TextView
+                            android:id="@+id/view_print_qr_item_code"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:gravity="center_vertical|start"
+                            android:text="BKK-0000070"
+                            android:textColor="@android:color/black"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/view_print_qr_total_amount"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical|end"
+                            android:text="10,000"
+                            android:textColor="@android:color/black"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/divider_width"
+                        android:background="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/view_print_qr_item_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/edit_text_padding"
+                        android:text="វត្ថុស្រួយងាយបែកបាក់ Fragile Item"
+                        android:textColor="@android:color/black"
+                        android:textSize="17sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/divider_width"
+                        android:background="@android:color/black" />
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:padding="@dimen/edit_text_padding"
+                                android:text="ដឹកដល់ផ្ទះ"
+                                android:textAlignment="center"
+                                android:textColor="@android:color/black"
+                                android:textSize="26sp" />
+
+                            <ImageView
+                                android:id="@+id/view_print_qr_code_img_qr"
+                                android:layout_width="170dp"
+                                android:layout_height="170dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="10dp"
+                                android:contentDescription="@string/image_content_desc"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/qr_icon" />
+
+
+                        </LinearLayout>
+
+
+                    </FrameLayout>
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/divider_width"
+                        android:background="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/view_print_qr_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/edit_text_padding"
+                        android:text="10/11/2016"
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/divider_width"
+                        android:background="@android:color/black" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="@dimen/edit_text_padding"
+                            android:text="ថ្លៃផ្ញើ:"
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/view_qr_total_amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="@dimen/edit_text_padding"
+                            android:text="value"
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/view_print_qr_Paid_Check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="@dimen/edit_text_padding"
+                            android:text="Paid"
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/view_print_qr_COD_Check_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="@dimen/edit_text_padding"
+                            android:text="ថ្លៃទំនិញ:"
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/view_print_qr_COD_Check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="@dimen/edit_text_padding"
+                            android:text="COD"
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/view_print_qr_receiver"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/edit_text_padding"
+                        android:text="081881887"
+                        android:textColor="@android:color/black"
+                        android:textSize="40sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/button_print_qr"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/button_effect_no_border"
+                    android:text="Print QR"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+</FrameLayout>
+

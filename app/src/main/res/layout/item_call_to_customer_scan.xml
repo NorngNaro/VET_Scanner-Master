@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:orientation="horizontal"
+    android:paddingTop="10dp">
+
+    <TextView
+        android:id="@+id/tvTitleIndex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/tvCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0000000000ssssssssssssssssssss01-1"
+        android:textAlignment="textStart"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="មិនទាន់Scan"
+        android:textSize="10dp"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:visibility="gone" />
+    <!--    <ImageView-->
+    <!--        android:src="@drawable/ic_tick_call"-->
+    <!--        android:layout_weight="0.4"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="match_parent"/>-->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <CheckBox
+            android:id="@+id/checkNumber"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/tvScanStatus"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_tick_call"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+
+</LinearLayout>

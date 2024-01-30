@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="?attr/colorPrimary"
+    android:elevation="4dp"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+    <TextView
+        android:id="@+id/toolbar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="TITLE"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white_blur"
+        android:backgroundTint="@color/white_blur"
+        app:cardCornerRadius="50dp"
+        android:layout_marginEnd="10dp"
+        android:layout_gravity="right">
+
+        <ImageView
+            android:id="@+id/contact"
+            android:visibility="visible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:src="@drawable/baseline_phone_24"
+            android:tint="@color/white"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/button_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white_blur"
+        android:backgroundTint="@color/white_blur"
+        app:cardCornerRadius="50dp"
+        android:layout_marginEnd="10dp"
+        android:visibility="visible"
+        android:layout_gravity="right">
+
+        <ImageView
+            android:visibility="visible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:src="@drawable/ic_search"
+            android:tint="@color/white"/>
+
+    </androidx.cardview.widget.CardView>
+
+
+<!--    <Button
+        android:id="@+id/button_search"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="150dp"
+        android:layout_height="@dimen/edit_text_height"
+        android:layout_marginTop="4dp"
+        android:visibility="gone"
+        android:background="@drawable/search_button_style"
+        android:drawableEnd="@drawable/ic_search"
+        android:gravity="start|center_vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="@dimen/edit_text_padding"
+        android:text="@string/search"
+        android:layout_gravity="right"
+        android:textAllCaps="false"
+        android:textColor="@color/black" />-->
+
+
+</androidx.appcompat.widget.Toolbar>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.nav.ChangeLanguageActivity">
+
+    <include layout="@layout/app_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:background="@drawable/outline_background"
+            android:padding="5dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_gravity="center"
+                android:src="@drawable/ic_sumi"
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
+            <Button
+                android:layout_gravity="center"
+                android:id="@+id/button_mobile_printer"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="@color/colorAsbestos"
+                android:text="Mobile Printer"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <!--Old version-->
+        <LinearLayout
+            android:visibility="visible"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/outline_background"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:padding="5dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_gravity="center"
+                android:src="@drawable/ic_bluetooth_printer"
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
+            <Button
+                android:id="@+id/button_bluetooth_old"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="@color/colorAsbestos"
+                android:text="BLUETOOTH"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!--New version-->
+        <LinearLayout
+            android:visibility="gone"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/outline_background"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:padding="5dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_gravity="center"
+                android:src="@drawable/ic_bluetooth_printer"
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
+            <Button
+                android:id="@+id/button_bluetooth"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="@color/colorAsbestos"
+                android:text="BLUETOOTH"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/llBluetoothPrinter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ជ្រើសរើស Printer"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:alpha="0.2"
+                android:background="@color/white" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnChooesPrinter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:text="@string/chooes_printer"
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Printer Connected:"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvNameDisplay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="មិនទាន់ភ្ជាប់ម៉ាស៊ីនព្រីន"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:visibility="gone"
+            android:id="@+id/button_test_print"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorAsbestos"
+            android:text="សាកល្បងបោះពុម្ពវិក្កយបត្រគំរូ"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>

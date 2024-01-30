@@ -1,0 +1,770 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:id="@+id/layout_receipt_print"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="VIRAK BUNTHAM EXPRESS"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="វិក័យប័ត្រផ្ញើឥវ៉ាន់"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/txt_branch_from"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="PHNOM PENH OLYMPIC"
+                android:textColor="@android:color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="លេខកូដផ្ញើរ: "
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/txt_transfer_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10818a9g"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="តម្លៃឥវ៉ាន់: "
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/txt_item_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$0"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txt_transfer_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:text="04/08/2018"
+                    android:textColor="@android:color/black" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ទិសដៅ: "
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/txt_destination_to"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Battambang"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divider_width"
+                    android:background="@android:color/black" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="@dimen/divider_width"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="4dp"
+                            android:text="ប្រភេទឥវ៉ាន់: "
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            android:id="@+id/txt_item_type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="4dp"
+                            android:text="វតុថ សួយងយែបកបក់ Fragile Item (1កញច ប់ Package)"
+                            android:textColor="@android:color/black" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/divider_width"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divider_width"
+                    android:background="@android:color/black" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="@dimen/divider_width"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:gravity="center_vertical"
+                        android:paddingStart="@dimen/edit_text_padding"
+                        android:paddingEnd="@dimen/edit_text_padding"
+                        android:text="លេខទូរស័ព្ទអ្នកផ្ញើរ"
+                        android:textColor="@android:color/black" />
+
+                    <View
+                        android:layout_width="@dimen/divider_width"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/txt_sender_phone"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:gravity="center_vertical"
+                        android:paddingStart="@dimen/edit_text_padding"
+                        android:paddingEnd="@dimen/edit_text_padding"
+                        android:text="093 273 329"
+                        android:textColor="@android:color/black" />
+
+                    <View
+                        android:layout_width="@dimen/divider_width"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divider_width"
+                    android:background="@android:color/black" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="@dimen/divider_width"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:gravity="center_vertical"
+                        android:paddingStart="@dimen/edit_text_padding"
+                        android:paddingEnd="@dimen/edit_text_padding"
+                        android:text="លេខទូរស័ព្ទអ្នកទទួល"
+                        android:textColor="@android:color/black" />
+
+                    <View
+                        android:layout_width="@dimen/divider_width"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/txt_receiver_phone"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:gravity="center_vertical"
+                        android:paddingStart="@dimen/edit_text_padding"
+                        android:paddingEnd="@dimen/edit_text_padding"
+                        android:text="093 273 329"
+                        android:textColor="@android:color/black" />
+
+                    <View
+                        android:layout_width="@dimen/divider_width"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divider_width"
+                    android:background="@android:color/black"
+                    android:visibility="gone" />
+
+                <!--                <LinearLayout-->
+                <!--                    android:visibility="gone"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="40dp"-->
+                <!--                    android:orientation="horizontal">-->
+
+                <!--                    <View-->
+                <!--                        android:layout_width="@dimen/divider_width"-->
+                <!--                        android:layout_height="match_parent"-->
+                <!--                        android:background="@android:color/black" />-->
+
+                <!--                    <TextView-->
+                <!--                        android:layout_width="0dp"-->
+                <!--                        android:layout_height="match_parent"-->
+                <!--                        android:layout_weight="3"-->
+                <!--                        android:gravity="center_vertical"-->
+                <!--                        android:paddingStart="@dimen/edit_text_padding"-->
+                <!--                        android:paddingEnd="@dimen/edit_text_padding"-->
+                <!--                        android:text="ទិសដៅ"-->
+                <!--                        android:textColor="@android:color/black" />-->
+
+                <!--                    <View-->
+                <!--                        android:layout_width="@dimen/divider_width"-->
+                <!--                        android:layout_height="match_parent"-->
+                <!--                        android:background="@android:color/black" />-->
+
+                <!--                    <TextView-->
+                <!--                        android:id="@+id/txt_destination_to"-->
+                <!--                        android:layout_width="0dp"-->
+                <!--                        android:layout_height="match_parent"-->
+                <!--                        android:layout_weight="2"-->
+                <!--                        android:gravity="center_vertical"-->
+                <!--                        android:paddingStart="@dimen/edit_text_padding"-->
+                <!--                        android:paddingEnd="@dimen/edit_text_padding"-->
+                <!--                        android:text="Battambang"-->
+                <!--                        android:textColor="@android:color/black" />-->
+
+                <!--                    <View-->
+                <!--                        android:layout_width="@dimen/divider_width"-->
+                <!--                        android:layout_height="match_parent"-->
+                <!--                        android:background="@android:color/black" />-->
+                <!--                </LinearLayout>-->
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divider_width"
+                    android:background="@android:color/black" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="@dimen/divider_width"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:gravity="center_vertical"
+                        android:paddingStart="@dimen/edit_text_padding"
+                        android:paddingEnd="@dimen/edit_text_padding"
+                        android:text="តម្លៃផ្ញើរ"
+                        android:textColor="@android:color/black" />
+
+                    <View
+                        android:layout_width="@dimen/divider_width"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/txt_transfer_fee"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:gravity="center_vertical"
+                        android:paddingStart="@dimen/edit_text_padding"
+                        android:paddingEnd="@dimen/edit_text_padding"
+                        android:text="5,000 ៛"
+                        android:textColor="@android:color/black" />
+
+                    <View
+                        android:layout_width="@dimen/divider_width"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divider_width"
+                    android:background="@android:color/black" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="@dimen/divider_width"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:gravity="center_vertical"
+                        android:paddingStart="@dimen/edit_text_padding"
+                        android:paddingEnd="@dimen/edit_text_padding"
+                        android:text="ការទូទាត់បង់ប្រាក់"
+                        android:textColor="@android:color/black" />
+
+                    <View
+                        android:layout_width="@dimen/divider_width"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/tvPad"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:gravity="center_vertical"
+                        android:paddingStart="@dimen/edit_text_padding"
+                        android:paddingEnd="@dimen/edit_text_padding"
+                        android:text="ទូទាត់រួច"
+                        android:textColor="@android:color/black" />
+
+                    <View
+                        android:layout_width="@dimen/divider_width"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divider_width"
+                    android:background="@android:color/black" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="@dimen/divider_width"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:gravity="center_vertical"
+                        android:paddingStart="@dimen/edit_text_padding"
+                        android:paddingEnd="@dimen/edit_text_padding"
+                        android:textSize="12sp"
+                        android:text="ទទួលតម្លៃឥវ៉ាន់ពីអ្នកទទួល(COD)"
+                        android:textColor="@android:color/black" />
+
+                    <View
+                        android:layout_width="@dimen/divider_width"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/tvCollectCod"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:gravity="center_vertical"
+                        android:paddingStart="@dimen/edit_text_padding"
+                        android:paddingEnd="@dimen/edit_text_padding"
+                        android:text="មាន"
+                        android:textColor="@android:color/black" />
+
+                    <View
+                        android:layout_width="@dimen/divider_width"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <View
+                        android:layout_width="@dimen/divider_width"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:gravity="center_vertical"
+                        android:paddingStart="@dimen/edit_text_padding"
+                        android:paddingEnd="@dimen/edit_text_padding"
+                        android:text="តម្លៃដឹកដល់ផ្ទះ"
+                        android:textColor="@android:color/black" />
+
+                    <View
+                        android:layout_width="@dimen/divider_width"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/txt_delivery_fee"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:gravity="center_vertical"
+                        android:paddingStart="@dimen/edit_text_padding"
+                        android:paddingEnd="@dimen/edit_text_padding"
+                        android:text="0 ៛"
+                        android:textColor="@android:color/black" />
+
+                    <View
+                        android:layout_width="@dimen/divider_width"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divider_width"
+                    android:background="@android:color/black"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <View
+                        android:layout_width="@dimen/divider_width"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/lbl_discount"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:gravity="center_vertical"
+                        android:paddingStart="@dimen/edit_text_padding"
+                        android:paddingEnd="@dimen/edit_text_padding"
+                        android:text="បញ្ចុះតម្លៃ"
+                        android:textColor="@android:color/black" />
+
+                    <View
+                        android:layout_width="@dimen/divider_width"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/txt_discount"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:gravity="center_vertical"
+                        android:paddingStart="@dimen/edit_text_padding"
+                        android:paddingEnd="@dimen/edit_text_padding"
+                        android:text="0 ៛"
+                        android:textColor="@android:color/black" />
+
+                    <View
+                        android:layout_width="@dimen/divider_width"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divider_width"
+                    android:background="@android:color/black"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <View
+                        android:layout_width="@dimen/divider_width"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:gravity="center_vertical"
+                        android:paddingStart="@dimen/edit_text_padding"
+                        android:paddingEnd="@dimen/edit_text_padding"
+                        android:text="តម្លៃសរុប"
+                        android:textColor="@android:color/black" />
+
+                    <View
+                        android:layout_width="@dimen/divider_width"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/txt_total_amount"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:gravity="center_vertical"
+                        android:paddingStart="@dimen/edit_text_padding"
+                        android:paddingEnd="@dimen/edit_text_padding"
+                        android:text="0 ៛"
+                        android:textColor="@android:color/black" />
+
+                    <View
+                        android:layout_width="@dimen/divider_width"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divider_width"
+                    android:background="@android:color/black"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <View
+                        android:layout_width="@dimen/divider_width"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:gravity="center_vertical"
+                        android:paddingStart="@dimen/edit_text_padding"
+                        android:paddingEnd="@dimen/edit_text_padding"
+                        android:text="ទឹកប្រាក់បង់"
+                        android:textColor="@android:color/black" />
+
+                    <View
+                        android:layout_width="@dimen/divider_width"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/txt_total_paid"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:gravity="center_vertical"
+                        android:paddingStart="@dimen/edit_text_padding"
+                        android:paddingEnd="@dimen/edit_text_padding"
+                        android:text="0 ៛"
+                        android:textColor="@android:color/black" />
+
+                    <View
+                        android:layout_width="@dimen/divider_width"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divider_width"
+                    android:background="@android:color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txt_branch_from_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Destination From"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/txt_branch_to_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textColor="@android:color/black" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txt_branch_from_tel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="H/P: 017 333 584"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/txt_branch_to_tel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="អរគុណចំពោះការប្រើប្រាស់សេវាកម្មយើងខ្ញុំ។"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="បង្កើតដោយ UDAYA Technology Co.,Ltd."
+                android:textColor="@android:color/black" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="បោះពុម្ភ: "
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/txt_print_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="បោះពុម្ភ/Print 04/08/2018 11:01:48"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button_print_receipt"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/button_effect_no_border"
+            android:text="Print Receipt"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
+

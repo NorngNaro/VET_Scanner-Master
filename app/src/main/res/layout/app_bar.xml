@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="?attr/colorPrimary"
+    android:elevation="4dp"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+    <TextView
+        android:id="@+id/toolbar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="TITLE"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/contact"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_phone"
+        android:layout_gravity="right"
+        android:layout_marginRight="20dp"
+        android:tint="@color/white"/>
+
+    <TextView
+        android:id="@+id/tvDone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:padding="15dp"
+        android:text="@string/done"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:layout_marginRight="10dp"
+        android:visibility="gone" />
+
+    <Button
+        android:layout_margin="6dp"
+        android:background="@drawable/button_effect"
+        android:id="@+id/btnClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="បិទការដឹក"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        android:layout_marginRight="10dp"
+        android:visibility="gone" />
+</androidx.appcompat.widget.Toolbar>

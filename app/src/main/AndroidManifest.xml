@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.udaya.virak_buntham.vetpickup">
+
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <uses-permission android:name="android .permission. BLUETOOTH_DEBUG" />
+    <uses-permission
+        android:name="android.permission.BLUETOOTH_PRIVILEGED"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission
+        android:name="android.permission.BLUETOOTH_PRIVILEGED"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission
+        android:name="android.permission.ACCESS_FINE_LOCATION"
+        tools:remove="android:maxSdkVersion" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:remove="android:maxSdkVersion" />
+    <uses-permission
+        android:name="android.permission.CALL_PHONE"
+        tools:remove="android:maxSdkVersion" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <application
+        android:name=".base.BaseApp"
+        android:allowBackup="true"
+        android:configChanges="locale"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_new_logos"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="GoogleAppIndexingWarning"
+        tools:replace="android:icon">
+        <activity
+            android:name=".activities.LEDScanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.locker.LockerDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.locker.LockerPrintActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.locker.LockerPrintOldActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.locker.LockerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.SelectionLocalFunctionActivity"
+            android:exported="false" />
+        <activity android:name=".activities.changeDestination.ReturnMenuActivity" />
+        <activity android:name=".activities.receivedCodeByBranch.SearchActivity" />
+        <activity android:name=".activities.receivedCodeByBranch.ScanCodeActivity" />
+        <activity android:name=".activities.callToCustomer.ItemDetailActivity" />
+        <activity android:name=".activities.receivedCodeByBranch.ListReceivedCodeByBranchActivity" />
+        <activity android:name=".activities.changeDestination.ChangeAddManualActivity" />
+        <activity android:name=".activities.movetovan.ReceiveItemByTelActivity" />
+        <activity android:name=".activities.changeDestination.PrintLayoutActivity" />
+        <activity android:name=".activities.changeDestination.PrintLayoutOldActivity" />
+        <activity android:name=".activities.changeDestination.ChangeBranchActivity" />
+        <activity android:name=".activities.changeDestination.ReturnActivity" />
+        <activity android:name=".activities.changeDestination.ReturnToCampusActivity" />
+        <activity android:name=".activities.changeDestination.ChangeDestinationMenuActivity" />
+        <activity android:name=".activities.ScanChangeDestinationActivity" />
+        <activity android:name=".activities.changeDestination.ChangeDestinationActivity" />
+        <activity android:name=".activities.ScanTransitActivity" />
+        <activity android:name=".activities.TransitActivity" />
+        <activity android:name=".activities.callToCustomer.CallToCustomerScanToLocationActivity" />
+        <activity android:name=".activities.callToCustomer.ScanCallToCustomerActivity" />
+        <activity android:name=".activities.callToCustomer.CallToCustomerDetailActivity" />
+        <activity android:name=".activities.callToCustomer.CallToCustomer" />
+        <activity android:name=".activities.nav.ScaleLayoutActivity" />
+        <activity android:name=".activities.nav.ScaleLayoutOldActivity" />
+        <activity android:name=".activities.outForDevliery.OutForDeliveryDetailActivity" />
+        <activity android:name=".activities.outForDevliery.OutForDeliveryActivity" />
+        <activity android:name=".activities.pickUp.PickUpActivity" />
+        <activity android:name=".activities.report.ReportViewActivity" />
+        <activity android:name=".activities.report.MenuReportActivity" />
+        <activity
+            android:name=".activities.CheckDeviceActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".scanner.ScanMovetoVanActivity" />
+        <activity android:name=".maltiSelectDestination.DestinationMaltiActivity" />
+        <activity android:name=".bluetoothprinter.LocalPrintActivity" />
+        <activity android:name=".bluetoothprinter.LocalPrintOldActivity" />
+        <activity
+            android:name=".activities.SearchListByBranchActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".activities.receivedCodeByBranch.SearchReceivedCodeByBranchActivity" />
+        <activity
+            android:name=".activities.ScanReceiveActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activities.ScanReceiveTransitActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activities.ScanMoveItemToVanActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".activities.movetovan.ReceiveItemActivity" />
+        <activity android:name=".activities.pickUp.PickUpDetailActivity" />
+        <activity android:name=".activities.MoveItemToVanActivity" />
+        <activity android:name=".activities.SearchListActivity" />
+        <activity android:name=".activities.SearchReceiveCodeActivity" />
+        <activity android:name=".activities.ReceivingActivity" />
+        <activity android:name=".activities.ReceiveScanActivity" />
+        <activity android:name=".activities.ConfigBaseUrl" />
+        <activity android:name=".activities.LoginActivity" />
+        <activity android:name=".activities.HomeActivity" />
+        <activity android:name=".activities.PrintReceiptCustomerReceiveActivity" />
+        <activity android:name=".activities.ScanActivity" />
+        <activity
+            android:name=".activities.goodsTransfer.GoodsTransferActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.goodsLocal.GoodsTransferLocalActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".activities.ReportGoodsTransferActivity" />
+        <activity android:name=".activities.RegisterAccountActivity" />
+        <activity android:name=".activities.nav.ForgetPasswordActivity" />
+        <activity android:name=".activities.SettingActivity" />
+        <activity android:name=".activities.SelectAreaActivity" />
+        <activity android:name=".activities.VerificationActivity" />
+        <activity android:name=".activities.SetupPasswordActivity" />
+        <activity android:name=".activities.ChangePasswordActivity" />
+        <activity android:name=".activities.nav.ChangeLanguageActivity" />
+        <activity android:name=".activities.ChangeAddressActivity" />
+        <activity android:name=".activities.PrintGTReceiptLocalActivity" />
+        <activity android:name=".activities.nav.ChoosePrinterActivity" />
+        <activity android:name=".bluetoothprinter.km_mode.BluetoothActivity" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <activity
+            android:name=".activities.MapsActivity"
+            android:label="@string/title_activity_maps" />
+        <activity android:name=".activities.SelectionActivity" />
+        <activity android:name=".activities.PrintGTReceiptActivity" />
+        <activity android:name=".activities.SelectionLocalActivity" />
+        <activity
+            android:name=".activities.SplashScreenActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!-- 调用微信的其他应用打开列表添加自己应用 -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="content" />
+                <!-- 允许所有类型文件 -->
+                <data android:mimeType="*/*" />
+                <!-- 只允许图片文件 -->
+                <!-- <data android:mimeType="image/*"/> -->
+            </intent-filter>
+            <!-- 调用QQ的其他应用打开列表添加自己应用 -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="file" />
+                <!-- 允许所有类型文件 -->
+                <data android:mimeType="*/*" />
+                <!-- 只允许图片文件 -->
+                <!-- <data android:mimeType="image/*"/> -->
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.MembershipScannerActivity" />
+        <activity
+            android:name=".bluetoothprinter.DeviceListActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="Test"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity
+            android:name=".activities.changeDestination.DeviceListChangeActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="Test"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity
+            android:name=".bluetoothprinter.DeviceShowListActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="select_device"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity
+            android:name=".activities.changeDestination.DeviceShowListChangeActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="select_device"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity android:name=".bluetoothprinter.CityPrintActivity" />
+        <activity android:name=".bluetoothprinter.CityPrintOldActivity" />
+
+        <service android:name=".serial.SerialService" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+    </application>
+
+</manifest>

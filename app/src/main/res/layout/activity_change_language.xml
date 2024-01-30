@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.nav.ChangeLanguageActivity">
+
+    <include layout="@layout/app_bar"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:gravity="center"
+        android:background="@color/colorWhite">
+        <Button
+            android:id="@+id/change_language_button_khmer"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="ភាសាខ្មែរ"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:background="@color/colorAsbestos"/>
+        <Button
+            android:id="@+id/change_language_button_english"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="English"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="8dp"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:background="@color/colorAsbestos"/>
+    </LinearLayout>
+
+</LinearLayout>

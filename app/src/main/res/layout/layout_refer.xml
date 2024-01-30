@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:background="@android:color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="បញ្ជាក់"
+            android:textColor="@android:color/black"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:background="@android:color/black" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="សូមជ្រើសរើសប្រភេទការដឹកជញ្ជូន"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:weightSum="3">
+
+        <Button
+            android:id="@+id/btn_delivery"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_height"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="3dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_effect"
+            android:text="ដឹកទៅសាខា"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_delivery_customer"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_height"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="3dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_effect"
+            android:text="ដឹកទៅអតិថិជន"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_cancel"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_height"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="3dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_effect"
+            android:text="@string/cancel"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>

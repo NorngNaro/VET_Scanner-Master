@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.report.MenuReportActivity">
+
+    <include layout="@layout/app_bar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/llReport"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!--No-->
+            <RelativeLayout
+                android:id="@+id/button_report1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height"
+                    android:background="@drawable/button_effect"
+                    android:clickable="false"
+                    android:paddingLeft="20dp"
+                    android:text="របាយការណ៍ផ្ទេរទៅឡាន(ភ្នាក់ងារ)"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+            <!--No-->
+            <RelativeLayout
+                android:id="@+id/Btn_ItemReceived_By_Agency"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="wrap_content">
+
+                <Button
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/button_effect"
+                    android:clickable="false"
+                    android:paddingLeft="20dp"
+                    android:text="របាយការណ៍ទទួលអីវ៉ាន់ (ភ្នាក់ងារ)"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+            <!--No-->
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/Btn_Agency_Commission"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/button_effect"
+                    android:clickable="false"
+                    android:paddingLeft="20dp"
+                    android:text="របាយការណ៍កំរៃជើងសារ (ភ្នាក់ងារ)"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+            <!--No-->
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/btn_report_menu4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/button_effect">
+
+                <Button
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height"
+                    android:background="@drawable/button_effect"
+                    android:clickable="false"
+                    android:paddingLeft="20dp"
+                    android:text="របាយការណ៍ផ្ញើអីវ៉ាន់ (ភ្នាក់ងារ)"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_alignParentEnd="true"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_move_tovan_color" />
+            </RelativeLayout>
+            <!--No-->
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/btn_report_out_for_delivery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/button_effect"
+                    android:clickable="false"
+                    android:paddingLeft="20dp"
+                    android:text="របាយការណ៍ដឹកដល់ផ្ទះ"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/btn1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/button_effect">
+
+                <Button
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height"
+                    android:background="@drawable/button_effect"
+                    android:clickable="false"
+                    android:paddingLeft="20dp"
+                    android:text="របាយការណ៍ផ្ញើអីវ៉ាន់ (Franchise)"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_alignParentEnd="true"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_inventory" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/btn2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/button_effect">
+
+                <Button
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height"
+                    android:background="@drawable/button_effect"
+                    android:clickable="false"
+                    android:paddingLeft="20dp"
+                    android:text="របាយការណ៍ផ្ទេរទៅឡាន (Franchise)"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_alignParentEnd="true"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_move_tovan_color" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/btnCheckGoods"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/button_effect">
+
+                <Button
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height"
+                    android:background="@drawable/button_effect"
+                    android:clickable="false"
+                    android:paddingLeft="20dp"
+                    android:text="របាយការណ៍ត្រួតពិនិត្យអីវ៉ាន់ចូល (Franchise)"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_alignParentEnd="true"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_check_stock" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/btn3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/button_effect">
+
+                <Button
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height"
+                    android:background="@drawable/button_effect"
+                    android:clickable="false"
+                    android:paddingLeft="20dp"
+                    android:text="របាយការណ៍ទទួលអីវ៉ាន់ (Franchise)"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_alignParentEnd="true"
+                    android:padding="5dp"
+                    android:src="@drawable/move_from_van_color" />
+            </RelativeLayout>
+
+            <!--COD-->
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/report_COD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/button_effect">
+
+                <Button
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height"
+                    android:background="@drawable/button_effect"
+                    android:clickable="false"
+                    android:paddingLeft="20dp"
+                    android:text="របាយការណ៍ទទួលអីវ៉ាន់ COD (Franchise)"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_alignParentEnd="true"
+                    android:padding="5dp"
+                    android:src="@drawable/move_from_van_color" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/Btn_ItemReceived_By_franchise"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/button_effect">
+
+                <Button
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height"
+                    android:background="@drawable/button_effect"
+                    android:clickable="false"
+                    android:paddingLeft="20dp"
+                    android:text="របាយការណ៍អតិថិជនទទួលអីវ៉ាន់ (Franchise)"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_alignParentEnd="true"
+                    android:padding="5dp"
+                    android:src="@drawable/customer_receive_color" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/btnGoodsNotReceive"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/button_effect"
+                    android:clickable="false"
+                    android:paddingLeft="20dp"
+                    android:text="របាយការណ៍អីវ៉ាន់អតិថិជនមិនទាន់ទទួល"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_alignParentEnd="true"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_not_yet_receive" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/report_return"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/button_effect">
+
+                <!--   android:text="របាយការណ៍ប្រើមុខងារប្តូរ (Franchise)"-->
+
+                <Button
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height"
+                    android:background="@drawable/button_effect"
+                    android:clickable="false"
+                    android:paddingLeft="20dp"
+                    android:text="របាយការណ៍អីវ៉ាន់ប្តូរ (Change)"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_alignParentEnd="true"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_change" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/btn4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/button_effect">
+
+                <Button
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height"
+                    android:background="@drawable/button_effect"
+                    android:clickable="false"
+                    android:paddingLeft="20dp"
+                    android:text="របាយការណ៍កំរៃជើងសារ (Franchise)"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_alignParentEnd="true"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_money" />
+            </RelativeLayout>
+
+            <!--No-->
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/btnFranchiseOld"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/button_effect">
+
+                <Button
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height"
+                    android:background="@drawable/button_effect"
+                    android:clickable="false"
+                    android:paddingLeft="20dp"
+                    android:text="របាយការណ៍កំរៃជើងសារ (Franchise) (Old)"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_alignParentEnd="true"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_money" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+        
+    </ScrollView>
+    
+
+</LinearLayout>

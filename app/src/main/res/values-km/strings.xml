@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">VET Scanner</string>
+    <string name="image_content_desc">Image description</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="title_activity_maps">Map</string>
+    <string name="phone_number_hint">Ex.012 xxx xxx</string>
+    <string name="price_hint">0.00</string>
+
+    <string name="welcome_pick_up">VET Pickup</string>
+    <string name="phone_number">លេខទូរស័ព្ទ</string>
+    <string name="password">ពាក្យសម្ងាត់</string>
+    <string name="forgot_password">ភ្លេចពាក្យសម្ងាត់</string>
+    <string name="register_account">ចុះឈ្មោះប្រើរប្រាស់</string>
+    <string name="login">ចូល</string>
+
+    <string name="change_password">ផ្លាស់ប្តូរពាក្យសម្ងាត់</string>
+    <string name="change_language">ផ្លាស់ប្តូរភាសា</string>
+    <string name="logout">ចាកចេញ</string>
+
+    <string name="home">ទំព័រដើម</string>
+    <string name="add_new_goods_transfer">បញ្ចូលបញ្ញើអីវ៉ាន់ថ្មី(ខេត្ដ/ក្រុង)</string>
+    <string name="report_goods_transfer">របាយការណ៏ទទូលប្រាក់</string>
+    <string name="pick_up_maps">ផែនទីបញ្ញើរអីវ៉ាន់</string>
+
+    <string name="change_new_password">ប្តូរពាក្យសម្ងាត់ថ្មី</string>
+    <string name="current_password">លេខសំងាត់​បច្ចុប្បន្ន</string>
+    <string name="new_password">ពាក្យសម្ងាត់​ថ្មី</string>
+    <string name="re_enter_password">បញ្ចូល​ពាក្យសម្ងាត់​ថ្មី​ម្តង​ទៀត</string>
+    <string name="str_continue">បន្ត</string>
+
+    <string name="add_goods_transfer">បញ្ចូលបញ្ញើរអីវ៉ាន់</string>
+    <string name="goods_transfer_information">ព័ត៌មានបញ្ញើរអីវ៉ាន់</string>
+    <string name="destination_from">ទិសដៅពី</string>
+    <string name="destination_to">ទិសដៅទៅ</string>
+    <string name="please_select">សូមជ្រើសរើស</string>
+    <string name="sender_telephone">លេខអ្នកផ្ញើ</string>
+    <string name="receiver_telephone">លេខអ្នកទទួល</string>
+    <string name="item_value">តម្លៃអីវ៉ាន់</string>
+
+    <string name="item_information">ព័ត៌មានអីវ៉ាន់</string>
+    <string name="item_type">ប្រភេទអីវ៉ាន់</string>
+    <string name="item_name">ឈ្មោះអីវ៉ាន់</string>
+    <string name="quantity">បរិមាណ</string>
+    <string name="uom">ខ្នាត</string>
+
+    <string name="pick_up">បញ្ញើរអីវ៉ាន់</string>
+    <string name="fee">តម្លៃផ្ញើ</string>
+    <string name="deliver_area">ដឹកដល់ផ្ទះ</string>
+    <string name="membership_code">កាតសមាជិក</string>
+    <string name="hint_membership_code">លេខកូដកាតសមាជិក</string>
+    <string name="total_amount">តម្លៃសរុប</string>
+    <string name="paid">បង់ប្រាក់</string>
+    <string name="save">រក្សាទុក</string>
+
+
+    <string name="no_record">គ្មានទិន្នន័យ</string>
+    <string name="select_currency">រូបិយប័ណ្ណ</string>
+    <string name="delivery_area">ដឹកដល់ផ្ទះ</string>
+
+    <!--instruction-->
+    <string name="toast_1">Transaction print,use the AIDL mode!</string>
+    <string name="toast_2">The service has been disconnected!</string>
+    <string name="toast_3">Bluetooth device is unavailable</string>
+    <string name="toast_4">Bluetooth device not detected. Please open Bluetooth!</string>
+    <string name="toast_5">Not Found InnterPrinter!</string>
+    <string name="toast_6">Bluetooth connect failed!</string>
+    <string name="toast_7"> Only a single Qr code is printed for the AIDL mode</string>
+    <string name="toast_8">Now QrCode size must be less than 7!</string>
+    <string name="toast_9">BarCode type or conent error!</string>
+
+    <!--Term and Condition-->
+    <string name="term_and_condition_km">ក្នុងករណីបាត់បង់ក្រុមហ៊ុន នឹងសងចំនួន២០ដងនៃតម្លៃ ឈ្នួលអីវ៉ាន់ដែលបានផ្ញើរ។ចំពោះអីវ៉ាន់មានតម្លៃ តិចជាងឬស្មើ $៥០ នឹងសងតាមតម្លៃ អីវ៉ាន់ជាក់ស្តែង។ផុតកំណត់ត្រឹមរយៈពេល៧ថ្ងៃ លើសពីនេះ ក្រុមហ៊ុនមិន ទទួសខុសត្រូវឡើយ។</string>
+    <string name="term_and_condition_en">In Case of lose, Company will pay 20 times of goods transportation fee. For goods cost less than or equal to 50$, Company will pay the actual price. Deadline to receive the goods is only 7days, in case of over due the company will be not responsible.</string>
+    <string name="title_activity_splash_screen">SplashScreenActivity</string>
+
+    <string name="printer_is_working">The printer is working</string>
+    <string name="printer_high_temp_alarm">Printer high temperature alarm</string>
+    <string name="motor_high_temp_alarm">Motor high temperature alarm</string>
+    <string name="out_of_paper">The printer is out of paper</string>
+    <string name="exists_paper">The printer paper is ready</string>
+    <string name="printer_current_task_print_complete">The print task has been printed</string>
+    <string name="cancel">បោះបង់</string>
+    <string name="please_point_the_camera_at_the_qr_code">សូមធ្វើការស្កេនឃ្យូអរកូដ</string>
+    <string name="receive">បានទទួល</string>
+    <string name="address">អាសយដ្ឋាន</string>
+    <string name="payment">ការទូទាត់</string>
+    <string name="receiver_address">អាសយដ្ឋានអ្នកទទួល</string>
+    <string name="add_new_goods_transfer_local">បញ្ជូលបញ្ញើអីវ៉ាន់ថ្មី (តំបន់)</string>
+    <string name="customer_receive">អតិថិជនទទួលអីវ៉ាន់(ដឹកជញ្ជូន)</string>
+    <string name="please_fill">សូមបំពេញព័ត៌មាន</string>
+    <string name="loadings">កំពុងដំណើរការ...</string>
+    <string name="collect_cod">ទទួលតម្លៃអីវ៉ាន់ពីអ្នកទទួល(COD)</string>
+    <string name="unpaid">មិនទាន់បង់ប្រាក់</string>
+    <string name="cod">តំលៃអីវ៉ាន់ (COD)</string>
+    <string name="ok">យល់ព្រម</string>
+    <string name="invalidcode">លេខកូដមិនត្រឹមត្រូវ</string>
+    <string name="message">សារ</string>
+    <string name="plzinputcode">សូមបញ្ចូលលេខកូដ</string>
+    <string name="search">ស្វែងរក</string>
+    <string name="or">ឬ</string>
+    <string name="scan_qr_code">ស្កេនលេខកូដ Qr</string>
+    <string name="searchgoodstrnasfer">ស្វែងរកទំនិញ</string>
+    <string name="enter_yr_code">បញ្ចូលលេខកូដផ្ទេរទំនិញរបស់អ្នក</string>
+    <string name="click_here_for_scan_qr_code">សូមចុចត្រង់នេះដើម្បីស្កេនលេខកូដ QR</string>
+    <string name="data_could_not_save">ទិន្នន័យមិនត្រូវបានរក្សាទុក</string>
+    <string name="data_has_been_save">ទិន្នន័យដែលត្រូវបានរក្សាទុក</string>
+    <string name="date">កាលបរិច្ឆេទ</string>
+    <string name="code">លេខកូដ</string>
+    <string name="feeed">តម្លៃដឹកជញ្ជូន</string>
+    <string name="collect_payment">ទឹកប្រាក់ត្រូវទទូល</string>
+    <string name="customer_s_signature">ហត្ថលេខារបស់អ្នកទទួល</string>
+    <string name="none">គ្មាន</string>
+    <string name="invalid_membership">កាតសមាជិកមិនត្រឹមត្រូវ</string>
+    <string name="please_fill_the_information">សូមបំពេញព័ត៌មាន</string>
+    <string name="close">បិទ</string>
+    <string name="customer_receive_list">តារាងអតិថិជនទទួលអីវ៉ាន់</string>
+    <string name="wrong_number">លេខអ្នកទទួលមិនត្រឹមត្រូវ</string>
+    <string name="enter_receiver_telephone">បញ្ចូលលេខទូរស័ព្ទអ្នកទទួល</string>
+    <string name="received_by">ទទួលដោយ</string>
+    <string name="information">ព័ត៌មាន</string>
+    <string name="do_you_want_exit">តើអ្នកពិតជាចង់ចាកចេញ?</string>
+    <string name="money">3000</string>
+    <string name="moneyTargets">តម្លៃផ្ញើគឺត្រូវចាប់ពី</string>
+    <string name="branch">សាខា</string>
+    <string name="all">ទាំងអស់</string>
+    <string name="van">យានយន្ត</string>
+    <string name="enter_item_code">បញ្ចូលលេខកូដអីវ៉ាន់</string>
+    <string name="total_scan">ស្កែនសរុប:</string>
+    <string name="item_available">អីវ៉ាន់នៅសល់​:</string>
+    <string name="finish">បញ្ចប់</string>
+    <string name="item_code">លេខកូដទំនិញ</string>
+    <string name="do_you_want_back">តើអ្នកចង់បញ្ចប់ប្រតិបត្តិការទេ?</string>
+    <string name="departure">ពេលវេលា</string>
+    <string name="start_scan">ចាប់ផ្តើមស្កេន</string>
+    <string name="plzSelectBranch">សូមជ្រើសរើសសាខា</string>
+    <string name="plzSelectVan">សូមជ្រើសរើសឡាន</string>
+    <string name="move_item_to_van_bus">ផ្ទេរអីវ៉ាន់ឡើងឡាន</string>
+    <string name="receive_item">ទទួលអីវ៉ាន់ពីឡាន</string>
+    <string name="please_select_location">សូមជ្រើសរើសទីតាំង</string>
+    <string name="username">ឈ្មោះ​អ្នកប្រើប្រាស់</string>
+    <string name="login_as">អ្នកប្រើប្រាស់ :</string>
+    <string name="customer_receive_branch">អតិថិជនទទួលអីវ៉ាន់(សាខា)</string>
+    <string name="location">ទីតាំង</string>
+    <string name="doyouwanttoreveiced">តើអ្នកចង់ទទួលទេ?</string>
+    <string name="setting">ការកំណត់ម៉ាស៊ីនព្រីន</string>
+    <string name="chooes_printer">ជ្រើសរើសម៉ាស៊ីនព្រីន</string>
+    <string name="done">រួចរាល់</string>
+    <string name="customer">អតិថិជន</string>
+    <string name="please_select_hour">សូមជ្រើសរើសម៉ោង</string>
+    <string name="please_select_destination">សូមជ្រើសរើសទិសដៅ</string>
+    <string name="please_select_min">សូមជ្រើសរើសនាទី</string>
+    <string name="goods_transfer_by_agency">របាយការណ៏ផ្ញើអីវ៉ាន់ (ភ្នាក់ងារ)</string>
+    <string name="item_received_by_agency">របាយការណ៏ទទួលអីវ៉ាន់ (ភ្នាក់ងារ)</string>
+    <string name="agency_commission">របាយការណ៏កំរៃជើងសារ (ភ្នាក់ងារ)</string>
+    <string name="report">របាយការណ៏</string>
+    <string name="no_device_connecting">No Device Connect</string>
+    <string name="tranfer_to">ផ្ទេរទៅកាន់</string>
+    <string name="plz_seleted_tranfer">សូមជ្រើសរើសផ្ទេរទៅកាន់</string>
+    <string name="house_pick_up">យកអីវ៉ាន់ដល់ផ្ទះ</string>
+    <string name="out_for_delivery">ដឹកអីវ៉ាន់ដល់ផ្ទះ</string>
+    <string name="tel">លេខទូរស័ព្ទ</string>
+    <string name="type">ប្រភេទ</string>
+    <string name="on_delivery">ដឹកជញ្ជូន</string>
+    <string name="closed">បានបញ្ចប់</string>
+    <string name="Receive">ទទួលទំនិញ</string>
+    <string name="do_you_want_receive">តើអ្នកពិតជាចង់ ទទួលទំនិញ?</string>
+    <string name="view">មើលលំអិត</string>
+    <string name="genaral">ទូទៅ</string>
+    <string name="no_data">គ្មាន​ទិន្នន័យ</string>
+    <string name="pending">រង់ចាំ</string>
+    <string name="completed">បានបញ្ចប់</string>
+    <string name="do_you_want_to_send_sms">តើអ្នកពិតជាចង់ផ្ញើសារ?</string>
+    <string name="send_sms_success">ផ្ញើសារជោគជ័យ</string>
+    <string name="send_sms_fail">ផ្ញើសារមិនជោគជ័យ</string>
+    <string name="calltocustomer">តេទៅអតិថិជន</string>
+    <string name="reason">ហេតុផល</string>
+</resources>

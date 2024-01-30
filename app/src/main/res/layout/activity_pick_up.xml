@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.pickUp.PickUpActivity">
+
+    <include layout="@layout/app_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/outline_background_color_primary"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btnListDelivery"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+
+            android:background="@drawable/button_effect"
+            android:text="តារាងដឹក"
+            android:textColor="@color/colorWhite"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/btnMap"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:text="ផែនទី"
+            android:textColor="@color/colorAccent"
+            android:textSize="12sp" />
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/llList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/tvPickUp_No_Data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/no_data"
+            android:visibility="gone" />
+
+        <androidx.recyclerview.widget.RecyclerView
+
+            android:id="@+id/recyclerPickUp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/llMaps"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp">
+
+                <fragment
+                    android:id="@+id/mapDisplay"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:context=".activities.MapsActivity" />
+
+            </FrameLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

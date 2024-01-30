@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#312783</color>
+    <color name="colorPrimaryDark">#312783</color>
+    <color name="colorAccent">#DE5D0A</color>
+
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="textColorPrimaryDark">#34495e</color>
+
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="navigationBarColor">#000000</color>
+    <color name="divider_color">#bdc3c7</color>
+
+    <color name="colorPumpkin">#d35400</color>
+    <color name="colorAlizarin">#e74c3c</color>
+    <color name="colorPomegranate">#c0392b</color>
+
+    <color name="colorSilver">#bdc3c7</color>
+    <color name="colorConcrete">#95a5a6</color>
+    <color name="colorAsbestos">#7f8c8d</color>
+    <color name="colorAsbestos_blur">#E6414141</color>
+    <color name="colorAsbestos_blur1">#757575</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#272727</color>
+    <color name="colorRed">#ff0000</color>
+
+    <color name="white_blur">#66FFFFFF</color>
+
+    <color name="colorSendText">#82CAFF</color>
+
+</resources>

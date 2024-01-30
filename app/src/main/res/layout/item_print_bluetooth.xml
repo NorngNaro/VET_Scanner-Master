@@ -1,0 +1,919 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    android:scaleType="fitStart">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardData"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:id="@+id/layoutLinear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|top"
+            android:gravity="left|top"
+            android:orientation="vertical"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txt_express"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:rotation="340"
+                    android:text="VET បញ្ញើទាន់ចិត្ត"
+                    android:alpha="0.55"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/linearLayoutCompat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/imgQrCodeItem"
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:contentDescription="@string/image_content_desc"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/logo_black" />
+                        </RelativeLayout>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvItemTypePrint"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="ក្រុមហ៊ុន វីរៈ ប៊ុនថាំ អេចប្រេស"
+                                android:textAlignment="center"
+                                android:textColor="@android:color/black"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Vireak Buntham Express Co.,Ltd"
+                                android:textAlignment="center"
+                                android:textColor="@android:color/black"
+                                android:textSize="9sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="VATTIN: L001-360000304"
+                                android:textAlignment="center"
+                                android:textColor="@android:color/black"
+                                android:textSize="8sp"
+                                android:textStyle="bold" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:text="#ដីឡូត៍លេខ C ផ្លូវ ភូមិគៀនឃ្លាំង សង្កាត់ជ្រោយចង្វារ ខណ្ឌជ្រោយចង្វារ រាជធានីភ្នំពេញ"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="8sp" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="លេខកូដផ្ញើ: "
+                                    android:textColor="@android:color/black"
+                                    android:textSize="10sp" />
+
+                                <TextView
+                                    android:id="@+id/tvCodePrint"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="test"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="តម្លៃអីវ៉ាន់ពិត:"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="10sp" />
+
+                                <TextView
+                                    android:id="@+id/tvItemValuePrint"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="test"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="11sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="កាលបរិច្ឆេទ:"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="10sp" />
+
+                                <TextView
+                                    android:id="@+id/tvcreatedDate"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="test"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="11sp" />
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/imgTranferCode"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_gravity="center"
+                                android:contentDescription="@string/image_content_desc"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/new_qr" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:gravity="center_vertical"
+                                android:paddingStart="@dimen/edit_text_padding"
+                                android:paddingEnd="@dimen/edit_text_padding"
+                                android:text="ស្កែនទីនេះដេីម្បីស្វែងរកអីវ៉ាន់"
+                                android:textAlignment="center"
+                                android:textColor="@android:color/black"
+                                android:textSize="8sp"
+                                tools:ignore="RtlCompat" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:orientation="vertical">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/divider_width"
+                            android:background="@android:color/black" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="@dimen/divider_width"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/black" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:padding="2dp"
+                                android:text="ប្រភេទឥវ៉ាន់"
+                                android:textAlignment="textStart"
+                                android:textColor="@android:color/black"
+                                android:textSize="9sp"
+
+                                tools:ignore="RtlCompat" />
+
+                            <View
+                                android:layout_width="@dimen/divider_width"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/black" />
+
+                            <TextView
+                                android:id="@+id/tvItemNamePrint"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:gravity="center_vertical"
+                                android:paddingStart="@dimen/edit_text_padding"
+                                android:paddingEnd="@dimen/edit_text_padding"
+                                android:text="test"
+                                android:textColor="@android:color/black"
+                                android:textSize="10sp" />
+
+                            <View
+                                android:layout_width="@dimen/divider_width"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/black" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/divider_width"
+                            android:background="@android:color/black" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="4">
+
+                            <View
+                                android:layout_width="@dimen/divider_width"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/black" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:text="លេខអ្នកផ្ញើ"
+                                android:textAlignment="textStart"
+                                android:textColor="@android:color/black"
+                                android:textSize="9sp"
+                                tools:ignore="RtlCompat" />
+
+                            <View
+                                android:layout_width="@dimen/divider_width"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/black" />
+
+                            <TextView
+                                android:id="@+id/tvSenderTelPrint"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:padding="2dp"
+                                android:text="test"
+                                android:textAlignment="textStart"
+                                android:textColor="@android:color/black"
+                                android:textSize="10sp"
+                                android:textStyle="bold"
+                                tools:ignore="RtlCompat" />
+
+                            <View
+                                android:layout_width="@dimen/divider_width"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/black" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:padding="2dp"
+                                android:text="លេខអ្នកទទួល"
+                                android:textAlignment="textStart"
+                                android:textColor="@android:color/black"
+                                android:textSize="9sp"
+                                tools:ignore="RtlCompat" />
+
+                            <View
+                                android:layout_width="@dimen/divider_width"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/black" />
+
+                            <TextView
+                                android:id="@+id/tvRecieverTelPrint"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:padding="2dp"
+                                android:text="test"
+                                android:textAlignment="textStart"
+                                android:textColor="@android:color/black"
+                                android:textSize="10sp"
+                                android:textStyle="bold"
+                                tools:ignore="RtlCompat" />
+
+
+                            <View
+                                android:layout_width="@dimen/divider_width"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/black" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/divider_width"
+                            android:background="@android:color/black" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="4">
+
+                            <View
+                                android:layout_width="@dimen/divider_width"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/black" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:padding="2dp"
+                                android:text="ផ្ញើពីសាខា"
+                                android:textAlignment="textStart"
+                                android:textColor="@android:color/black"
+                                android:textSize="9sp"
+                                tools:ignore="RtlCompat" />
+
+                            <View
+                                android:layout_width="@dimen/divider_width"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/black" />
+
+                            <TextView
+                                android:id="@+id/tvFromDesPrint"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:padding="2dp"
+                                android:text="test"
+                                android:textAlignment="textStart"
+                                android:textColor="@android:color/black"
+                                android:textSize="10sp"
+                                tools:ignore="RtlCompat" />
+
+                            <View
+                                android:layout_width="@dimen/divider_width"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/black" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:padding="2dp"
+                                android:text="ទិសដៅ"
+                                android:textAlignment="textStart"
+                                android:textColor="@android:color/black"
+                                android:textSize="9sp"
+                                tools:ignore="RtlCompat" />
+
+                            <View
+                                android:layout_width="@dimen/divider_width"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/black" />
+
+                            <TextView
+                                android:id="@+id/tvFromToPrint"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:padding="2dp"
+                                android:text="test"
+                                android:textAlignment="textStart"
+                                android:textColor="@android:color/black"
+                                android:textSize="10sp"
+                                tools:ignore="RtlCompat" />
+
+
+                            <View
+                                android:layout_width="@dimen/divider_width"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/black" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/divider_width"
+                            android:background="@android:color/black" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="4">
+
+                            <View
+                                android:layout_width="@dimen/divider_width"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/black" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:padding="2dp"
+                                android:text="តម្លៃផ្ញើ"
+                                android:textAlignment="textStart"
+                                android:textColor="@android:color/black"
+                                android:textSize="9sp"
+                                tools:ignore="RtlCompat" />
+
+                            <View
+                                android:layout_width="@dimen/divider_width"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/black" />
+
+                            <TextView
+                                android:id="@+id/tvTranferFeePrint"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:padding="2dp"
+                                android:text="test"
+                                android:textAlignment="textStart"
+                                android:textColor="@android:color/black"
+                                android:textSize="10sp"
+                                android:textStyle="bold"
+                                tools:ignore="RtlCompat" />
+
+                            <View
+                                android:layout_width="@dimen/divider_width"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/black" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:padding="2dp"
+                                android:text="តម្លៃដឹកដល់ផ្ទះ"
+                                android:textAlignment="textStart"
+                                android:textColor="@android:color/black"
+                                android:textSize="9sp"
+                                tools:ignore="RtlCompat" />
+
+                            <View
+                                android:layout_width="@dimen/divider_width"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/black" />
+
+                            <TextView
+                                android:id="@+id/tvDeliveryFeePrint"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:padding="2dp"
+                                android:text="test"
+                                android:textAlignment="textStart"
+                                android:textColor="@android:color/black"
+                                android:textSize="10sp"
+                                tools:ignore="RtlCompat" />
+
+
+                            <View
+                                android:layout_width="@dimen/divider_width"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/black" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/divider_width"
+                            android:background="@android:color/black" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="4">
+
+                            <View
+                                android:layout_width="@dimen/divider_width"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/black" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="18dp"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:padding="2dp"
+                                android:text="តម្លៃធានារ៉ាប់រង"
+                                android:textAlignment="textStart"
+                                android:textColor="@android:color/black"
+                                android:textSize="9sp"
+                                tools:ignore="RtlCompat" />
+
+                            <View
+                                android:layout_width="@dimen/divider_width"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/black" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:padding="2dp"
+                                android:text=""
+                                android:textAlignment="center"
+                                android:textColor="@android:color/black"
+                                android:textSize="10sp"
+                                tools:ignore="RtlCompat" />
+
+                            <View
+                                android:layout_width="@dimen/divider_width"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/black" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:padding="2dp"
+                                android:text="តម្លៃឥវ៉ាន់​COD"
+                                android:textAlignment="textStart"
+                                android:textColor="@android:color/black"
+                                android:textSize="9sp"
+                                tools:ignore="RtlCompat" />
+
+                            <View
+                                android:layout_width="@dimen/divider_width"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/black" />
+
+                            <TextView
+                                android:id="@+id/tvCODPrint"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:padding="2dp"
+                                android:textAlignment="textStart"
+                                android:textColor="@android:color/black"
+                                android:textSize="10sp"
+                                android:textStyle="bold"
+                                tools:ignore="RtlCompat" />
+
+
+                            <View
+                                android:layout_width="@dimen/divider_width"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/black" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/divider_width"
+                            android:background="@android:color/black" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="4">
+
+                            <View
+                                android:layout_width="@dimen/divider_width"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/black" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:paddingStart="@dimen/edit_text_padding"
+                                android:paddingEnd="@dimen/edit_text_padding"
+                                android:text="សរុបប្រាប់បង់"
+                                android:textAlignment="textStart"
+                                android:textColor="@color/black"
+                                android:textSize="10dp"
+                                tools:ignore="RtlCompat" />
+
+                            <View
+                                android:layout_width="@dimen/divider_width"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/black" />
+
+                            <TextView
+                                android:id="@+id/tvTotalFeePrint"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:gravity="center_vertical"
+                                android:paddingStart="@dimen/edit_text_padding"
+                                android:paddingEnd="@dimen/edit_text_padding"
+                                android:text="test"
+                                android:textColor="@android:color/black"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+
+                            <View
+                                android:layout_width="@dimen/divider_width"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/black" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/divider_width"
+                            android:background="@android:color/black" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/tvBrandNameFromprint"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="test"
+                            android:textColor="@android:color/black"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/tvBrandNameToPrint"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="test"
+                            android:textColor="@android:color/black"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/tvBrandFromTelPrint"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="test"
+                            android:textColor="@android:color/black"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/tvBrandTelToPrint"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="test"
+                            android:textColor="@android:color/black"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="សំណងអតិបរិមាមិនលើស២០០ដុល្លាឬចំនួន២០ដងនៃតម្លៃបញ្ញើ។"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="10sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:orientation="horizontal"
+                        android:weightSum="4">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.8"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/imgVetLogistic"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:contentDescription="@string/image_content_desc"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/vet_qr" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.8"
+                                android:text="VET Logistic App"
+                                android:textAlignment="center"
+                                android:textColor="@android:color/black"
+                                android:textSize="7sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3.2"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="លក្ខខណ្ឌ៖"
+                                android:textColor="@android:color/black"
+                                android:textSize="9sp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="- ក្រុមហ៊ុនមិនទទួលបញ្ញើខុសច្បាប់ដូចជាអាវុធ គ្រឿងញៀន សត្វព្រៃ ។ល។"
+                                android:textColor="@android:color/black"
+                                android:textSize="7sp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="- អីវ៉ាន់ដែលងាយខូចគុណភាព ក្រុមហ៊ុនមិនទទួលខុសត្រូវ"
+                                android:textColor="@android:color/black"
+                                android:textSize="7sp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="- ក្រុមហ៊ុនមិនទទួលខុសត្រូវលើ អីវ៉ាន់ដែលភ្ញៀវទុកលើសពី១សប្តាហ៍"
+                                android:textColor="@android:color/black"
+                                android:textSize="7sp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="- ករណីបាត់រឺខូចខាតក្រុមហ៊ុនសង២០ដងនៃតំលៃផ្ញើ តែមិនលើសពីតំលៃអីវ៉ាន់។"
+                                android:textColor="@android:color/black"
+                                android:textSize="7sp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="Facebook : Virak Buntham Express Tour &amp; Travel"
+                                android:textColor="@android:color/black"
+                                android:textSize="7sp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="Hotline: 010 522 522"
+                                android:textColor="@android:color/black"
+                                android:textSize="7sp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:orientation="horizontal"
+                        android:weightSum="4">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.8"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/black"
+                            android:textSize="5sp" />
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/button_print_qr"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/button_effect_no_border"
+                        android:text="Print QR"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white"
+                        android:visibility="gone" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</androidx.appcompat.widget.LinearLayoutCompat>

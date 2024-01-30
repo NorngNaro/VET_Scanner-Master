@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".activities.RegisterAccountActivity">
+
+    <include layout="@layout/app_bar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:gravity="center_horizontal">
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_account"
+                android:layout_marginTop="24dp"
+                android:contentDescription="@string/image_content_desc"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Register Account"
+                android:textSize="15sp"
+                android:textColor="@android:color/white"
+                android:textAllCaps="true"
+                android:layout_marginTop="12dp"
+                android:gravity="center"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp">
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:hint="First Name"
+                    android:textSize="14sp"
+                    android:inputType="text"
+                    android:paddingStart="@dimen/edit_text_padding"
+                    android:paddingEnd="@dimen/edit_text_padding"
+                    android:background="@drawable/outline_background_color_primary"/>
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:hint="Last Name"
+                    android:textSize="14sp"
+                    android:inputType="text"
+                    android:paddingStart="@dimen/edit_text_padding"
+                    android:paddingEnd="@dimen/edit_text_padding"
+                    android:background="@drawable/outline_background_color_primary"/>
+            </LinearLayout>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="Phone Number"
+                android:textSize="14sp"
+                android:inputType="phone"
+                android:paddingStart="@dimen/edit_text_padding"
+                android:paddingEnd="@dimen/edit_text_padding"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/outline_background_color_primary"/>
+
+            <com.udaya.virak_buntham.vetpickup.custom.MButton
+                android:id="@+id/button_select_province"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Select Province"
+                android:textAllCaps="false"
+                android:layout_marginTop="12dp"
+                android:paddingStart="@dimen/edit_text_padding"
+                android:paddingEnd="@dimen/edit_text_padding"
+                android:drawableEnd="@drawable/ic_nav_next"
+                android:gravity="start|center_vertical"
+                style="?android:attr/borderlessButtonStyle"
+                android:background="@drawable/outline_background_color_primary"/>
+
+            <com.udaya.virak_buntham.vetpickup.custom.MButton
+                android:id="@+id/button_select_district"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Select District"
+                android:textAllCaps="false"
+                android:layout_marginTop="12dp"
+                android:paddingStart="@dimen/edit_text_padding"
+                android:paddingEnd="@dimen/edit_text_padding"
+                android:drawableEnd="@drawable/ic_nav_next"
+                android:gravity="start|center_vertical"
+                style="?android:attr/borderlessButtonStyle"
+                android:background="@drawable/outline_background_color_primary"/>
+
+            <com.udaya.virak_buntham.vetpickup.custom.MButton
+                android:id="@+id/button_select_commune"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Select Commune"
+                android:textAllCaps="false"
+                android:layout_marginTop="12dp"
+                android:paddingStart="@dimen/edit_text_padding"
+                android:paddingEnd="@dimen/edit_text_padding"
+                android:drawableEnd="@drawable/ic_nav_next"
+                android:gravity="start|center_vertical"
+                style="?android:attr/borderlessButtonStyle"
+                android:background="@drawable/outline_background_color_primary"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp">
+                <EditText
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:hint="Home No."
+                    android:textSize="14sp"
+                    android:inputType="text"
+                    android:paddingStart="@dimen/edit_text_padding"
+                    android:paddingEnd="@dimen/edit_text_padding"
+                    android:background="@drawable/outline_background_color_primary"/>
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:hint="Street"
+                    android:textSize="14sp"
+                    android:inputType="text"
+                    android:paddingStart="@dimen/edit_text_padding"
+                    android:paddingEnd="@dimen/edit_text_padding"
+                    android:background="@drawable/outline_background_color_primary"/>
+            </LinearLayout>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="Password"
+                android:textSize="14sp"
+                android:inputType="textPassword"
+                android:paddingStart="@dimen/edit_text_padding"
+                android:paddingEnd="@dimen/edit_text_padding"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/outline_background_color_primary"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="Re-enter Password"
+                android:textSize="14sp"
+                android:inputType="textPassword"
+                android:paddingStart="@dimen/edit_text_padding"
+                android:paddingEnd="@dimen/edit_text_padding"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/outline_background_color_primary"/>
+
+            <com.udaya.virak_buntham.vetpickup.custom.MButton
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Continue"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:layout_marginTop="24dp"
+                style="?android:attr/borderlessButtonStyle"
+                android:background="@drawable/button_background"/>
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+
+
+</LinearLayout>

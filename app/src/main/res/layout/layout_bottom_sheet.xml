@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp">
+    <LinearLayout
+        android:id="@+id/button_route_maps"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="12dp">
+        <FrameLayout
+            android:layout_width="44dp"
+            android:layout_height="44dp">
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_directions"
+                android:layout_gravity="center"
+                android:contentDescription="@string/image_content_desc"/>
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:text="Get Direction"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:gravity="center_vertical"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/button_view_goods_detail"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="12dp">
+        <FrameLayout
+            android:layout_width="44dp"
+            android:layout_height="44dp">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_goods_form"
+                android:layout_gravity="center"
+                android:contentDescription="@string/image_content_desc"/>
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:text="Convert To Transfer"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:gravity="center_vertical"/>
+    </LinearLayout>
+</LinearLayout>

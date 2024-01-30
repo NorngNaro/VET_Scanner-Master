@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.changeDestination.ChangeDestinationMenuActivity">
+
+    <include
+        layout="@layout/app_bar"/>
+
+    <LinearLayout
+        android:gravity="center"
+        android:padding="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:paddingLeft="20dp"
+            android:id="@+id/btn_return_HQ"
+            android:textAlignment="textStart"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/button_effect"
+            android:text="ត្រលប់ទៅសាខាកណ្តាល (Return to HQ)"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+        <Button
+            android:paddingLeft="20dp"
+            android:textAlignment="textStart"
+            android:id="@+id/btn_return"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/button_effect"
+            android:text="ត្រលប់ទៅសាខាដើម (Return to Origin)"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+        <Button
+            android:paddingLeft="20dp"
+            android:textAlignment="textStart"
+            android:id="@+id/btn_change_branch"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/button_effect"
+            android:text="ប្តូរសាខា (Change Branch)"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+        <Button
+            android:paddingLeft="20dp"
+            android:textAlignment="textStart"
+            android:id="@+id/btn_changeDestination"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/button_effect"
+            android:text="ប្តូរទិសដៅ (Change Destination)"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

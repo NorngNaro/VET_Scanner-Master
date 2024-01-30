@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/llItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/profile_user_image"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="right"
+            android:src="@drawable/ic_camera"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:weightSum="3">
+
+            <TextView
+                android:id="@+id/tvTitleDestinationTo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="ទីតាំង"
+                android:textColor="@color/colorPrimary"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:text=":"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/tvDestinationTo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.9"
+                android:gravity="start"
+                android:text="Siem Reap"
+                android:textColor="@color/colorPrimary" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:weightSum="3">
+
+            <TextView
+                android:id="@+id/tvTitleCode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="លេខកូដទំនិញ"
+                android:textColor="@color/colorPrimary"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:text=":"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/tvCode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.9"
+                android:gravity="start"
+                android:text="QWZ13Z"
+                android:textColor="@color/colorPrimary" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:weightSum="3">
+
+            <TextView
+                android:id="@+id/tvTitleReceiverTel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="អ្នកទទួល"
+                android:textColor="@color/colorPrimary"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:text=":"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/tvTel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.9"
+                android:gravity="start"
+                android:text="077252748"
+                android:textColor="@color/colorPrimary" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/locationName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:weightSum="3">
+
+            <TextView
+                android:id="@+id/tvNameDestinationTo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="ទិសដៅ"
+                android:textColor="@color/colorPrimary"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:text=":"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/tvNameTo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.9"
+                android:gravity="start"
+                android:text="Siem Reap"
+                android:textColor="@color/colorPrimary" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

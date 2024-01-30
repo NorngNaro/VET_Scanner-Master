@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.receivedCodeByBranch.SearchReceivedCodeByBranchActivity">
+
+    <include layout="@layout/app_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_margin="10dp"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:textSize="14sp"
+                    android:text="@string/enter_receiver_telephone"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edt_search_code_by_branch"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/edit_text_height"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/outline_background_color_primary"
+                    android:gravity="start"
+                    android:inputType="number"
+                    android:padding="@dimen/edit_text_padding"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/btn_search_by_branch"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_effect"
+                android:text="@string/search"
+                android:textColor="@color/white" />
+            <LinearLayout
+                android:id="@+id/relativeLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:orientation="horizontal"
+                android:weightSum="100"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/btn_transfer"
+                app:layout_constraintTop_toBottomOf="@+id/btn_transfer">
+
+                <View
+                    android:id="@+id/v1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="50"
+                    android:background="@android:color/darker_gray" />
+
+                <TextView
+                    android:id="@+id/v2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/v1"
+                    android:text="@string/or"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@id/v2"
+                    android:layout_weight="50"
+                    android:background="@android:color/darker_gray" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:onClick="CameraScan"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorAccent"
+                    android:textSize="12sp"
+                    android:text="ស្កែនតាមកាមេរ៉ាទូរស័ព្ទ"
+                    android:textColor="@color/white" />
+                <Button
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:id="@+id/btnMobileScan"
+                    android:textAllCaps="false"
+                    android:layout_width="0dp"
+                    android:textSize="12sp"
+                    android:onClick="MobileScanner"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorAccent"
+                    android:text="ស្កែនតាម Mobile Scanner"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:alpha="0.2"
+                android:background="@color/black" />
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="20dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerSearchByBranch"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:nestedScrollingEnabled="false"
+                    android:scrollbars="none" />
+
+            </androidx.core.widget.NestedScrollView>
+
+            <RelativeLayout
+                android:id="@+id/relateByBranchNoData"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/img_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="15dp"
+                    android:alpha="0.3"
+                    android:src="@drawable/empty_icon" />
+
+                <TextView
+                    android:id="@+id/tvSendingItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/img_background"
+                    android:layout_gravity="center"
+                    android:alpha="0.3"
+                    android:text="@string/no_record"
+                    android:textAlignment="center"
+                    android:textColor="@color/black" />
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

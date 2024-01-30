@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.movetovan.ReceiveItemActivity">
+
+    <include layout="@layout/app_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/date"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/btn_select_date"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/edit_text_height"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/outline_background_color_primary"
+                android:clickable="false"
+                android:drawableEnd="@drawable/ic_calendar"
+                android:inputType="date"
+                android:maxLines="2"
+                android:paddingStart="@dimen/edit_text_padding"
+                android:paddingEnd="@dimen/edit_text_padding"
+                android:text="@string/please_select"
+                android:textAlignment="textStart"
+                android:textSize="@dimen/small_text_size"
+                tools:ignore="TextViewEdits" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/branch"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/button_select_branch"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/edit_text_height"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/outline_background_color_primary"
+                android:drawableEnd="@drawable/ic_nav_next"
+                android:gravity="start|center_vertical"
+                android:paddingStart="@dimen/edit_text_padding"
+                android:paddingEnd="@dimen/edit_text_padding"
+                android:text="@string/please_select"
+                android:textAllCaps="false" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="ទីតាំង"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:enabled="false"
+                android:id="@+id/btnSelectLocation"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/edit_text_height"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/outline_background_color_primary"
+                android:drawableEnd="@drawable/ic_nav_next"
+                android:gravity="start|center_vertical"
+                android:paddingStart="@dimen/edit_text_padding"
+                android:paddingEnd="@dimen/edit_text_padding"
+                android:text="@string/please_select"
+                android:textAllCaps="false" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button_start_Scan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/colorAccent"
+            android:text="ស្កែនតាមកាមេរ៉ាទូរស័ព្ទ"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btnMobileScan"
+            android:textAllCaps="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/colorAccent"
+            android:text="ស្កែនតាម Mobile Scanner"
+            android:textColor="@color/white" />
+        <LinearLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="5dp"
+            android:orientation="horizontal"
+            android:weightSum="100"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/btn_transfer"
+            app:layout_constraintTop_toBottomOf="@+id/btn_transfer">
+
+            <View
+                android:id="@+id/v1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="50"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:id="@+id/v2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/v1"
+                android:text="@string/or"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/v2"
+                android:layout_weight="50"
+                android:background="@android:color/darker_gray" />
+        </LinearLayout>
+        <Button
+            android:id="@+id/btnMobileScanByTel"
+            android:textAllCaps="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/colorAccent"
+            android:text="ស្វែងរកតាមលេខទូរស័ព្ទអ្នកទទួល"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</LinearLayout>

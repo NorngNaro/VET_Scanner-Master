@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/bar_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:text="ជ្រើសរើសម៉ាស៊ីនព្រីន"
+            android:gravity="center"
+            android:textColor="#ffFFFFFF"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/bar_btn"
+            android:background="@drawable/ic_back"
+            android:layout_marginStart="15dp"
+            android:layout_gravity="left|center_vertical"
+            android:layout_width="28dp"
+            android:layout_height="28dp"/>
+
+    </FrameLayout>
+
+    <EditText
+            android:id="@+id/edit_name"
+        android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="Search" />
+
+
+    <ListView
+        android:id="@+id/lv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+    <TextView
+        android:id="@+id/tvEmpty"
+        android:textSize="20sp"
+        android:text="No Bluetooth Device Found"
+        android:textColor="#bfbfbf"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button android:id="@+id/tvScan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Scan"
+    />
+</LinearLayout>

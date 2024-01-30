@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:paddingTop="5dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_gravity="center"
+            android:id="@+id/imageview"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:src="@drawable/ic_1" />
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/abeezee"
+            android:padding="10dp"
+            android:text="បញ្ចូលបញ្ញើរឥវ៉ាន់ថ្មី (ខេត្ដ/ក្រុង)"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="14sp" />
+    </LinearLayout>
+    <View
+        android:id="@+id/viewRight"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/ic_bg"
+        android:layout_width="1dp"
+        android:alpha="0.5"
+        android:layout_height="130dp"/>
+    <View
+        android:background="@drawable/ic_bg"
+        android:id="@+id/viewBelow"
+        android:layout_below="@id/linear"
+        android:layout_width="match_parent"
+        android:alpha="0.5"
+        android:layout_height="1dp"/>
+
+</RelativeLayout>

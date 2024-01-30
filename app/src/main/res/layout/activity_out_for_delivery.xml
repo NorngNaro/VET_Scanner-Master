@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.outForDevliery.OutForDeliveryActivity">
+
+    <include layout="@layout/app_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/outline_background_color_primary"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btnListDelivery"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_effect"
+            android:text="តារាងដឹក"
+            android:textColor="@color/colorWhite"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/btnMap"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:text="ផែនទី"
+            android:textColor="@color/colorAccent"
+            android:textSize="12sp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_marginTop="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:background="@drawable/outline_background_color_primary"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/edt_code_scan"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/edit_text_height"
+                        android:layout_marginTop="4dp"
+                        android:background="@android:color/transparent"
+                        android:hint="បញ្ចូលលេខទូរស័ព្ទ"
+                        android:imeOptions="actionGo"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:paddingStart="@dimen/edit_text_padding"
+                        android:paddingEnd="@dimen/edit_text_padding"
+                        android:textSize="@dimen/small_text_size" />
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgSearchCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_search" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imgScanQr"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="0.8"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/qr_icon" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvNoData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/no_data"
+                android:visibility="gone" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerOutForDelivery"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llMaps"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/btn_receive">
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:layout_margin="2dp">
+
+                <fragment
+                    android:id="@+id/mapDisplay"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:context=".activities.MapsActivity" />
+
+            </FrameLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

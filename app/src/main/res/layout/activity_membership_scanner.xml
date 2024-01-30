@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+
+        <SurfaceView
+            android:id="@+id/surface_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Point your camera at the QR code"
+            android:textColor="@android:color/white"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:layout_marginBottom="44dp"
+            android:layout_gravity="bottom|center_horizontal"/>
+
+    </FrameLayout>
+    <Button
+        android:id="@+id/button_cancel_scan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:text="Cancel"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:textAllCaps="false"
+        android:background="@drawable/button_effect_no_border"/>
+</LinearLayout>

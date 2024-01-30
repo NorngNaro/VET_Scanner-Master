@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.callToCustomer.CallToCustomerScanToLocationActivity">
+
+    <include layout="@layout/app_bar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="អីវ៉ាន់មិនទាន់Scanចូលសាខា"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                app:cardCornerRadius="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.3"
+                            android:text="@string/sender_telephone" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.1"
+                            android:gravity="center"
+                            android:text=":" />
+
+                        <TextView
+                            android:id="@+id/tvSenderTelCall"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.6"
+                            android:textAlignment="textEnd" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.3"
+                            android:text="@string/receiver_telephone" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.1"
+                            android:gravity="center"
+                            android:text=":" />
+
+                        <TextView
+                            android:id="@+id/tvReceiverTelCall"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.6"
+                            android:textAlignment="textEnd" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.3"
+                            android:text="ចំនួន" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.1"
+                            android:gravity="center"
+                            android:text=":" />
+
+                        <TextView
+                            android:id="@+id/tvItemQtyCall"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.6"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/type" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.1"
+                            android:gravity="center"
+                            android:text=":" />
+
+                        <TextView
+                            android:layout_weight="2.8"
+                            android:text="asdf"
+                            android:id="@+id/tvTypeCall"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_weight="0.5"
+                            android:text="ទីតាំងធ្នើ"
+                            android:textColor="@android:color/black" />
+
+                        <Button
+                            android:id="@+id/btnSelectLocation"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/edit_text_height"
+                            android:layout_marginTop="4dp"
+                            android:layout_weight="1.5"
+                            android:background="@drawable/outline_background_color_primary"
+                            android:drawableEnd="@drawable/ic_nav_next"
+                            android:gravity="start|center_vertical"
+                            android:paddingStart="@dimen/edit_text_padding"
+                            android:paddingEnd="@dimen/edit_text_padding"
+                            android:text="@string/please_select"
+                            android:textAllCaps="false" />
+                    </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="លេខខូដអីវ៉ាន់ដែលត្រូវScanចូល"
+                        android:textAlignment="center"
+                        android:textColor="@color/black" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerScanItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:listitem="@layout/item_call_to_customer_scan" />
+
+                    <Button
+                        android:id="@+id/btnScan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="30dp"
+                        android:background="@color/colorAccent"
+                        android:text="Scan ចូលធ្នើរ"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>
