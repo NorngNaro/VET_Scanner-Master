@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: ./app/libs/hztytech_printer_sdk_20220817.jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/hztytech_printer_sdk_20220817.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
