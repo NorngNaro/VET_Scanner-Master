@@ -84,7 +84,6 @@ public class LEDScanActivity extends AppCompatActivity implements OnInternetConn
     @BindView(R.id.tvWrong)
     TextView tvWrong;
 
-
     private LEDAdapter ledAdapter;
     List<MoveItemToVanData> data = new ArrayList<>();
     String branchId = "";
@@ -138,12 +137,7 @@ public class LEDScanActivity extends AppCompatActivity implements OnInternetConn
             return false;
         });
 
-        buttonBranch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gotoRequestBrand();
-            }
-        });
+        buttonBranch.setOnClickListener(v -> gotoRequestBrand());
 
     }
 
@@ -169,12 +163,7 @@ public class LEDScanActivity extends AppCompatActivity implements OnInternetConn
                 scanStatus = 2;
                 codeInput.setText("");
 
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        clearFocus();
-                    }
-                }, 50);
+                new Handler().postDelayed(this::clearFocus, 50);
 
             }
         }
@@ -208,10 +197,8 @@ public class LEDScanActivity extends AppCompatActivity implements OnInternetConn
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                AlertDialogUtil.dialogAlertLEDScanBack(this);
-                break;
+        if (item.getItemId() == android.R.id.home) {
+            AlertDialogUtil.dialogAlertLEDScanBack(this);
         }
         return super.onOptionsItemSelected(item);
     }
@@ -241,7 +228,7 @@ public class LEDScanActivity extends AppCompatActivity implements OnInternetConn
         progressDialog.setCancelable(false);
         progressDialog.show();
         ApiInterface apiService = ApiClient.getClient(this, this).create(ApiInterface.class);
-        Call<MoveItemToVanData> call = apiService.getTransitItem(device, token, signature, session, sysCode, code, branch, "" + AppConfig.getGetLatitude(), "" + AppConfig.getGetLongitude());
+        Call<MoveItemToVanData> call = apiService.getTransitItem(device, token, signature, session, sysCode, code, branch, String.valueOf(AppConfig.getGetLatitude()), String.valueOf(AppConfig.getGetLongitude()));
         call.enqueue(new Callback<MoveItemToVanData>() {
             @Override
             public void onResponse(@NonNull Call<MoveItemToVanData> call, @NonNull Response<MoveItemToVanData> response) {

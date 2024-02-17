@@ -7,6 +7,7 @@ import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -70,9 +71,7 @@ public class ChooesPrinterActivity extends AppCompatActivity implements View.OnC
         RegisterActionBar.registerSupportToolbar(this, mToolbar);
         registerOnClick(this);
         getChoosePrinter();
-        btnChoosePrinter.setOnClickListener(v -> choosePrinter()
-
-        );
+        btnChoosePrinter.setOnClickListener(v -> choosePrinter());
     }
 
     private void registerOnClick(View.OnClickListener clickListener) {
@@ -92,7 +91,7 @@ public class ChooesPrinterActivity extends AppCompatActivity implements View.OnC
     @Override
     public void onBackPressed() {
         if (printPort == null) {
-            Log.d("printPort==>","null");
+            Log.d("printPort==>", "null");
         } else {
             printPort.disconnect();
             isConnected = false;
@@ -118,7 +117,7 @@ public class ChooesPrinterActivity extends AppCompatActivity implements View.OnC
                 break;
 
             case R.id.button_bluetooth:
-                Log.e("", "onClick: asdfdf" );
+                Log.e("", "onClick: asdfdf");
                 llBluetoothPrinter.setVisibility(View.VISIBLE);
                 if (printPort != null) {
                     printPort.disconnect();
@@ -129,7 +128,7 @@ public class ChooesPrinterActivity extends AppCompatActivity implements View.OnC
                 break;
 
             case R.id.button_bluetooth_old:
-                Log.e("", "onClick: asdfdf" );
+                Log.e("", "onClick: asdfdf");
                 llBluetoothPrinter.setVisibility(View.VISIBLE);
                 if (printPort != null) {
                     printPort.disconnect();
@@ -256,10 +255,6 @@ public class ChooesPrinterActivity extends AppCompatActivity implements View.OnC
         progressDialog.setMessage(getResources().getString(R.string.loadings));
         progressDialog.show();
         printPort = new PrintPort();
-
-
-
-
     }
 
     private void SharedPreferencesType(String name) {

@@ -208,7 +208,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private boolean check;
     public static int addGoodsNew = 0; // 1 is add goods Toin Jet , 0 is add goods
 
-    boolean isVETSlot = true; // For LED function is true
+    boolean isVETSlot = false; // For LED function is true
 
     public static BluetoothDevice blueDevice;
 
@@ -272,15 +272,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         ActivityCompat.requestPermissions(this,
                 new String[]{Manifest.permission.BLUETOOTH_SCAN},
                 1);
-
-
     }
 
     public void getLocationData() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             gpsTracker = new GpsTrackerLocation(HomeActivity.this);
-        }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (gpsTracker.canGetLocation()) {
                 double letData = gpsTracker.getLatitude();
                 double longData = gpsTracker.getLongitude();
@@ -308,7 +304,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         menuList.add(new ExampleItem(R.drawable.delivery_home_color, "ដឹកអីវ៉ាន់ដល់ផ្ទះ"));
         menuList.add(new ExampleItem(R.drawable.locker, "Locker"));
         menuList.add(new ExampleItem(R.drawable.ic_change, "ប្តូរ (Change)"));
-        menuList.add(new ExampleItem(R.drawable.ic_led, "LED Scan"));
+        if (isVETSlot) menuList.add(new ExampleItem(R.drawable.ic_led, "LED Scan"));
     }
 
 
@@ -708,7 +704,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(this, GoodsTransferActivity.class);
             startActivity(intent);
         }
-
     }
 
     private void gotoTransit() {
@@ -1303,18 +1298,15 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @SuppressLint("MissingPermission")
     private boolean getLocation() {
         if (isGpsEnabled()) {
-            if (ContextCompat.checkSelfPermission(HomeActivity.this, Manifest.permission.ACCESS_FINE_LOCATION)
-                    != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(HomeActivity.this, new String[]{
-                        Manifest.permission.ACCESS_FINE_LOCATION
-                }, 100);
+            if (ContextCompat.checkSelfPermission(HomeActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(HomeActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 100);
             } else {
                 try {
                     locationManager = (LocationManager) getApplicationContext().getSystemService(LOCATION_SERVICE);
                     locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 5, HomeActivity.this);
                 } catch (Exception e) {
                     e.printStackTrace();
-                    //  Toast.makeText(this, "GPS" + e, Toast.LENGTH_SHORT).show();
+//                      Toast.makeText(this, "GPS" + e, Toast.LENGTH_SHORT).show();
                 }
             }
         } else {
@@ -1358,7 +1350,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     private boolean isGpsEnabled() {
         LocationManager service = (LocationManager) getSystemService(LOCATION_SERVICE);
-        return service.isProviderEnabled(LocationManager.GPS_PROVIDER) && service.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+        return service.isProviderEnabled(LocationManager.GPS_PROVIDER) || service.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
     }
 
     private void enableLocation() {
@@ -1424,9 +1416,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         String getPrinterType = pref3.getString("Name", "");
 
 
-        if(getPrinterType.equals("MobilePrinter")){
+        if (getPrinterType.equals("MobilePrinter")) {
             tvConnectedPrinter.setText("Sunmi Device");
-        }else {
+        } else {
             if (getVersion.equals("New")) {
                 if (KmCreate.getInstance().connectType == 1) {
                     tvConnectedPrinter.setText(printerName);
@@ -1516,11 +1508,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void dataListen(ConnectedDevice connectedDevice) {
-        DataListener.with(connectedDevice).listen(new ListenAction() {
-            @Override
-            public void action(byte[] bytes) {
-                //固件回传的数据
-            }
+        DataListener.with(connectedDevice).listen(bytes -> {
+            //固件回传的数据
         }).start();
     }
 
@@ -1654,14 +1643,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 finish();
                 return;
             }
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    connection.connect(null);
-                }
-            }).start();
+            new Thread(() -> connection.connect(null)).start();
         } else {
-
             tvConnectedPrinter.setText("មិនទាន់ភ្ជាប់ម៉ាស៊ីនព្រីន");
         }
     }

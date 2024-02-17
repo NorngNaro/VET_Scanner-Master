@@ -22,9 +22,6 @@
         android:name="android.permission.BLUETOOTH_PRIVILEGED"
         tools:ignore="ProtectedPermissions" />
     <uses-permission
-        android:name="android.permission.ACCESS_FINE_LOCATION"
-        tools:remove="android:maxSdkVersion" />
-    <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         tools:remove="android:maxSdkVersion" />
     <uses-permission
@@ -60,9 +57,9 @@
         <activity
             android:name=".activities.locker.LockerDetailActivity"
             android:exported="false" />
-        <activity
-            android:name=".activities.locker.LockerPrintActivity"
-            android:exported="false" />
+        <!--        <activity-->
+        <!--            android:name=".activities.locker.LockerPrintActivity"-->
+        <!--            android:exported="false" />-->
         <activity
             android:name=".activities.locker.LockerPrintOldActivity"
             android:exported="false" />

@@ -42,6 +42,7 @@ import com.udaya.virak_buntham.vetpickup.utils.CustomProber;
 
 import java.util.ArrayList;
 import java.util.Locale;
+
 import com.udaya.virak_buntham.vetpickup.R;
 import com.udaya.virak_buntham.vetpickup.utils.TextUtil;
 
@@ -60,7 +61,9 @@ public class CheckDeviceActivity extends ListActivity implements ServiceConnecti
     public static String location;
 
     private CheckDeviceActivity.Connected connected = CheckDeviceActivity.Connected.False;
+
     private enum Connected {False, Pending, True}
+
     private ArrayAdapter<CheckDeviceActivity.ListItem> listAdapter;
     private final ArrayList<CheckDeviceActivity.ListItem> listItems = new ArrayList<>();
 
@@ -227,55 +230,52 @@ public class CheckDeviceActivity extends ListActivity implements ServiceConnecti
             }
         };
 
-        Log.e("", "onCreate: " + listAdapter.getCount() );
+        Log.e("", "onCreate: " + listAdapter.getCount());
         setListAdapter(listAdapter);
 
     }
-
 
 
     @SuppressLint("UnspecifiedRegisterReceiverFlag")
     @Override
     public void onResume() {
         super.onResume();
-            refresh();
-            setDevice();
-            try {
-                this.registerReceiver(broadcastReceiver, new IntentFilter(ConstantUtil.INTENT_ACTION_GRANT_USB));
-                if (initialStart && service != null) {
-                    initialStart = false;
-                    this.runOnUiThread(this::connect);
-                }
-            } catch (Exception e) {
-                Log.e("", "onResume: " + e );
+        refresh();
+        setDevice();
+        try {
+            this.registerReceiver(broadcastReceiver, new IntentFilter(ConstantUtil.INTENT_ACTION_GRANT_USB));
+            if (initialStart && service != null) {
+                initialStart = false;
+                this.runOnUiThread(this::connect);
             }
+        } catch (Exception e) {
+            Log.e("", "onResume: " + e);
+        }
     }
 
     @SuppressLint("UnsafeIntentLaunch")
-    void setDevice(){
-        if(!connect){
+    void setDevice() {
+        if (!connect) {
             try {
                 CheckDeviceActivity.ListItem item = listItems.get(index);
                 if (item.driver == null) {
                     index = index + 1;
                     setDevice();
-                    if(index == listItems.size()){
+                    if (index == listItems.size()) {
                         Intent intent = getIntent();
                         finish();
                         startActivity(intent);
                     }
-                    Log.e("", "setDevice: No Device" );
-                  //  Toast.makeText(this, "No device", Toast.LENGTH_SHORT).show();
+                    Log.e("", "setDevice: No Device");
+                    //  Toast.makeText(this, "No device", Toast.LENGTH_SHORT).show();
                 } else {
                     connect = true;
-                    index = 0 ;
+                    index = 0;
                     CheckDeviceActivity.portNum = item.port;
                     CheckDeviceActivity.deviceId = item.device.getDeviceId();
 
                     Handler handler = new Handler();
-                    handler.postDelayed(() -> {
-                        send(location + ",005");
-                    }, 500);
+                    handler.postDelayed(() -> send(location + ",005"), 500);
 
                     ScanReceiveTransitActivity.fromLed = true;
                     finish();

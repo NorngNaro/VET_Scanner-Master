@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdk 33
+    compileSdk 34
     defaultConfig {
         applicationId "com.udaya.virak_buntham.vetpickup"
         minSdkVersion 21
-        targetSdkVersion 33
+        targetSdkVersion 34
         versionCode 90
         versionName "1.48"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -50,12 +50,13 @@ dependencies {
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'androidx.mediarouter:mediarouter:1.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-  //  implementation 'com.google.android.gms:play-services:12.0.1'
+    //  implementation 'com.google.android.gms:play-services:12.0.1'
     implementation 'com.google.android.gms:play-services-maps:18.1.0'
     implementation 'com.google.android.gms:play-services-location:21.0.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'org.jetbrains:annotations:15.0'
-    implementation files('libs/hztytech_printer_sdk_20220817.jar')
+//    implementation files('libs/hztytech_printer_sdk_20220817.jar')
+    implementation files('libs/hztytech_printer_sdk_2.0.4.4.jar')
     implementation files('libs/fat-generic-tspl-bluetooth-classic-0.1.16-GA.jar')
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.0'
@@ -71,8 +72,8 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-scalars:2.1.0'
 
     //Butter Knife
-    implementation 'com.jakewharton:butterknife:8.8.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    implementation 'com.jakewharton:butterknife:10.0.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
 
     //Recycler View
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
