@@ -120,7 +120,10 @@ public class ScaleLayoutOldActivity extends AppCompatActivity {
 
         Log.e(TAG, "onCreate: " + HomeActivity.blueDevice );
 
-        blueToothConnect();
+        if(HomeActivity.printerWire.isEmpty()){
+            blueToothConnect();
+        }
+
 
     }
 

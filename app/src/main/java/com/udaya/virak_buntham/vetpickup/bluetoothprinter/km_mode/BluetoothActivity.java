@@ -78,7 +78,27 @@ public class BluetoothActivity extends Activity {
                 HomeActivity.blueDevice = blueDevices.get(position);
 
                 if (type.equals("BLE")) {
-                    KmBlebluetooth.getInstance().getConnectDevice(blueDevices.get(position), new KmBlebluetoothAdapter() {
+                    Kmbluetooth.getInstance().getConnectDeviceOnly(blueDevices.get(position),new KmbluetoothAdapter(){
+                        @Override
+                        public void connectSuccess() {
+                            System.out.println("连接成功");
+                            KmCreate.getInstance().connectType = 1;
+
+                            if (ContextCompat.checkSelfPermission(BluetoothActivity.this, Manifest.permission.BLUETOOTH_CONNECT) == PackageManager.PERMISSION_DENIED) {
+                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                                    ActivityCompat.requestPermissions(BluetoothActivity.this, new String[]{Manifest.permission.BLUETOOTH_CONNECT}, 2);
+                                    return;
+                                }
+                            }
+
+                            KmCreate.getInstance().connectName = blueDevices.get(position).getName();
+
+                            Log.e("", "connectSuccess:  Meeeeee" );
+                            connected();
+                        }
+
+                    });
+                    /*KmBlebluetooth.getInstance().getConnectDevice(blueDevices.get(position), new KmBlebluetoothAdapter() {
                         @Override
                         public void connectSuccess() {
                             super.connectSuccess();
@@ -95,7 +115,7 @@ public class BluetoothActivity extends Activity {
                             KmCreate.getInstance().connectName = blueDevices.get(position).getName();
                             connected();
                         }
-                    });
+                    });*/
                 } else {
                     Kmbluetooth.getInstance().getConnectDeviceOnly(blueDevices.get(position), new KmbluetoothAdapter() {
                         @Override

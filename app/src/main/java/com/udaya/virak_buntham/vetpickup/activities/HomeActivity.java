@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.content.IntentSender;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.hardware.usb.UsbDevice;
 import android.location.Location;
 
 import androidx.annotation.NonNull;
@@ -49,6 +50,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Handler;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.MenuItem;
@@ -60,6 +62,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.hztytech.printer.sdk.km_bluetooth.Kmbluetooth;
+import com.hztytech.printer.sdk.km_usb.KmUsb;
+import com.hztytech.printer.sdk.km_usb.KmUsbAdapter;
 import com.printer.psdk.device.adapter.ConnectedDevice;
 import com.printer.psdk.device.bluetooth.Bluetooth;
 import com.printer.psdk.device.bluetooth.ConnectListener;
@@ -211,10 +215,14 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     boolean isVETSlot = true; // For LED function is true
 
     public static BluetoothDevice blueDevice;
+    public static String printerWire = "";
 
     private GenericTSPL tspl;
 
     private Connection connection;
+
+    private ArrayList<UsbDevice> usbDevices = new ArrayList<>();
+    int i = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -222,10 +230,12 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
 
-        if (isVETSlot) {
+        KmUsb.getInstance().openUsb(this);
+
+   /*     if (isVETSlot) {
             CheckDeviceActivity.location = "000";
             startActivity(new Intent(this, CheckDeviceActivity.class));
-        }
+        }*/
 
 /*
         SharedPreferences.Editor editor = getSharedPreferences("PrinterName", MODE_PRIVATE).edit();
@@ -242,6 +252,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             e.printStackTrace();
         }
 
+        // Connect Printer using wire
+        printerWireConnect();
 
         ProgressDialog progressDialog = new ProgressDialog(this);
         checkerPermissionCamera();
@@ -274,6 +286,50 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 1);
 
 
+    }
+
+    void printerWireConnect(){
+        // Connect printer using USB
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                pendingIntent = PendingIntent.getBroadcast(HomeActivity.this, 0, new Intent(ACTION_USB_PERMISSION), PendingIntent.FLAG_MUTABLE);
+                KmUsb.getInstance().starUsbDevicesDiscovery();
+                usbDevices = KmUsb.getInstance().usbDevices;
+
+                Log.e("", "onCreate: " + usbDevices.size());
+
+                for (i = 0; i < usbDevices.size(); i++) {
+                    Log.e("", "onCreate: " + usbDevices.get(i).getDeviceId());
+                    Log.e("", "onCreate: " + usbDevices.get(i).getProductName());
+                    if (usbDevices.get(i).getProductName().equals("KM-202MQ")) {
+                        connectPrinter(i);
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                connectPrinter(i);
+                            }
+                        }, 5000);
+
+                        break;
+                    }
+                }
+            }
+        }, 1000);
+    }
+
+    private void connectPrinter(int k) {
+        tvConnectedPrinter.setText("មិនទាន់ភ្ជាប់ម៉ាស៊ីនព្រីន");
+        KmUsb.getInstance().usbConnect(usbDevices.get(k), new KmUsbAdapter() {
+            @Override
+            public void connectSuccess() {
+                super.connectSuccess();
+                KmCreate.getInstance().connectType = 3;
+                KmCreate.getInstance().connectName = usbDevices.get(k).getSerialNumber();
+                tvConnectedPrinter.setText(usbDevices.get(k).getProductName());
+                HomeActivity.printerWire = (usbDevices.get(i).getProductName()).toString();
+            }
+        });
     }
 
     public void getLocationData() {
@@ -493,7 +549,13 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                     }
                     break;
                 case "LED Scan":
-                    startActivity(new Intent(this, LEDScanActivity.class));
+
+                    if(CheckDeviceActivity.connectSuccess){
+                        startActivity(new Intent(this, LEDScanActivity.class));
+                    }else {
+                        Toast.makeText(this, "មិនមានការភ្ជាប់ UBS LED", Toast.LENGTH_SHORT).show();
+                    }
+
                     break;
  /*               case "ស្វែងរក":
                     if (printPort != null) {
@@ -1299,6 +1361,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         super.onResume();
     }
 
+
+
     //get letLong
     @SuppressLint("MissingPermission")
     private boolean getLocation() {
@@ -1424,8 +1488,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         String getPrinterType = pref3.getString("Name", "");
 
 
-        if(getPrinterType.equals("MobilePrinter")){
+        if (getPrinterType.equals("MobilePrinter")) {
             tvConnectedPrinter.setText("Sunmi Device");
+        } else if(pref3.getString("Name", "").equals("printer_wire")){
+            printerWireConnect();
         }else {
             if (getVersion.equals("New")) {
                 if (KmCreate.getInstance().connectType == 1) {
@@ -1434,7 +1500,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                     if (getVersion.equals("New")) {
                         tvConnectedPrinter.setText(printerName);
                     }
-
                 } else {
                     tvConnectedPrinter.setText("មិនទាន់ភ្ជាប់ម៉ាស៊ីនព្រីន");
                 }
@@ -1591,6 +1656,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onRestart() {
         super.onRestart();
+
         if (HomeActivity.blueDevice != null) {
             connection = Bluetooth.getInstance().createConnectionClassic(HomeActivity.blueDevice, new ConnectListener() {
                 @Override

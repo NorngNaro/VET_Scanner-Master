@@ -58,6 +58,7 @@ public class CheckDeviceActivity extends ListActivity implements ServiceConnecti
 
     public static int deviceId, portNum;
     public static String location;
+    public static boolean connectSuccess = false;
 
     private CheckDeviceActivity.Connected connected = CheckDeviceActivity.Connected.False;
     private enum Connected {False, Pending, True}
@@ -158,6 +159,7 @@ public class CheckDeviceActivity extends ListActivity implements ServiceConnecti
 
 
     private void disconnect() {
+        Log.e("", "disconnect: Disconnect " );
         connected = CheckDeviceActivity.Connected.False;
         service.disconnect();
         usbSerialPort = null;
@@ -202,8 +204,7 @@ public class CheckDeviceActivity extends ListActivity implements ServiceConnecti
             }
         };
 
-        this.bindService(new Intent(this, SerialService.class), this, Context.BIND_AUTO_CREATE);
-
+        CheckDeviceActivity.this.bindService(new Intent(CheckDeviceActivity.this, SerialService.class), CheckDeviceActivity.this, Context.BIND_AUTO_CREATE);
 
         listAdapter = new ArrayAdapter<CheckDeviceActivity.ListItem>(this, 0, listItems) {
             @SuppressLint("SetTextI18n")
@@ -261,20 +262,23 @@ public class CheckDeviceActivity extends ListActivity implements ServiceConnecti
                     setDevice();
                     if(index == listItems.size()){
                         Intent intent = getIntent();
+                        connectSuccess = false;
                         finish();
                         startActivity(intent);
                     }
+                  //  connectSuccess = false;
                     Log.e("", "setDevice: No Device" );
                   //  Toast.makeText(this, "No device", Toast.LENGTH_SHORT).show();
                 } else {
                     connect = true;
+                    connectSuccess = true;
                     index = 0 ;
                     CheckDeviceActivity.portNum = item.port;
                     CheckDeviceActivity.deviceId = item.device.getDeviceId();
 
                     Handler handler = new Handler();
                     handler.postDelayed(() -> {
-                        send(location + ",005");
+                        send(location + ",005,007");
                     }, 500);
 
                     ScanReceiveTransitActivity.fromLed = true;
@@ -383,4 +387,5 @@ public class CheckDeviceActivity extends ListActivity implements ServiceConnecti
         check = true;
         unregisterReceiver(broadcastReceiver);
     }
+
 }

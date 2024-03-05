@@ -218,7 +218,7 @@ public class ReturnActivity extends AppCompatActivity implements View.OnClickLis
                             SharedPreferences pref1 = getSharedPreferences("BluetoothVersion", MODE_PRIVATE);
                             String getVersion = pref1.getString("Version", "");
 
-                            if(getVersion.equals("New")){
+                            if(getVersion.equals("New") || !HomeActivity.printerWire.isEmpty()){
                                 PrintLayoutActivity.desFromPint = response.body().getDestinationFrom();
                                 PrintLayoutActivity.toPint = response.body().getDestinationTo();
                                 PrintLayoutActivity.qrTotalAmountPrint = response.body().getTotal_amount();

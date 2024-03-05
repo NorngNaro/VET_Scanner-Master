@@ -105,7 +105,9 @@ public class LEDScanActivity extends AppCompatActivity implements OnInternetConn
         RegisterActionBar.registerSupportToolbar(this, mToolbar);
 
         qrCode.setOnClickListener(v -> {
-            if(scanStatus == 1){
+            CheckDeviceActivity.location = "1";
+            startActivity(new Intent(LEDScanActivity.this, CheckDeviceActivity.class));
+         /*   if(scanStatus == 1){
                 if(branchId.isEmpty()){
                     AlertDialogUtil.dialogCheckValue(this, getResources().getString(R.string.information), getResources().getString(R.string.plzSelectBranch));
                 } else {
@@ -118,7 +120,7 @@ public class LEDScanActivity extends AppCompatActivity implements OnInternetConn
                             branchId
                     );
                 }
-            }
+            }*/
         });
 
 

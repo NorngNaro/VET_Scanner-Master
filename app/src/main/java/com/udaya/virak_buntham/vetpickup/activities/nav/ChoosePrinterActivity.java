@@ -2,14 +2,18 @@ package com.udaya.virak_buntham.vetpickup.activities.nav;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.hardware.usb.UsbDevice;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import android.os.Handler;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,6 +26,7 @@ import com.hztytech.printer.sdk.km_blebluetooth.KmBlebluetooth;
 import com.hztytech.printer.sdk.km_bluetooth.Kmbluetooth;
 import com.hztytech.printer.sdk.km_bluetooth.KmbluetoothAdapter;
 import com.hztytech.printer.sdk.km_usb.KmUsb;
+import com.hztytech.printer.sdk.km_usb.KmUsbAdapter;
 import com.printer.psdk.device.adapter.ConnectedDevice;
 import com.printer.psdk.device.bluetooth.Bluetooth;
 import com.printer.psdk.device.bluetooth.ConnectListener;
@@ -45,6 +50,8 @@ import butterknife.ButterKnife;
 
 import static com.udaya.virak_buntham.vetpickup.bluetoothprinter.DeviceListActivity.EXTRA_DEVICE_ADDRESS;
 
+import java.util.ArrayList;
+
 public class ChoosePrinterActivity extends AppCompatActivity implements View.OnClickListener {
 
     @BindView(R.id.toolbar)
@@ -57,6 +64,8 @@ public class ChoosePrinterActivity extends AppCompatActivity implements View.OnC
     Button btnBluetooth;
     @BindView(R.id.button_bluetooth_old)
     Button btnBluetoothOld;
+    @BindView(R.id.button_printer_wire)
+    Button btnPrinterWire;
     @BindView(R.id.button_test_print)
     Button btnTestPrint;
     String getName = "";
@@ -83,6 +92,11 @@ public class ChoosePrinterActivity extends AppCompatActivity implements View.OnC
     private GenericTSPL tspl;
 
     private Connection connection;
+
+    private ArrayList<UsbDevice> usbDevices = new ArrayList<>();
+    int i = 0;
+    private static final String ACTION_USB_PERMISSION = "com.raycloud.kmprint";
+    private PendingIntent pendingIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,11 +136,16 @@ public class ChoosePrinterActivity extends AppCompatActivity implements View.OnC
 
         btnTestPrint.setOnClickListener(view -> {
             Log.e("", "onCreate: "+ getVersion );
-            if(getVersion.equals("New")){
-                startActivity(new Intent(this, ScaleLayoutActivity.class));
+            if(HomeActivity.printerWire.isEmpty()){
+                if(getVersion.equals("New")){
+                    startActivity(new Intent(this, ScaleLayoutActivity.class));
+                }else {
+                    startActivity(new Intent(this, ScaleLayoutOldActivity.class));
+                }
             }else {
-                startActivity(new Intent(this, ScaleLayoutOldActivity.class));
+                startActivity(new Intent(this, ScaleLayoutActivity.class));
             }
+
         });
 
     }
@@ -141,6 +160,7 @@ public class ChoosePrinterActivity extends AppCompatActivity implements View.OnC
         btnMobilePrinter.setOnClickListener(clickListener);
         btnBluetooth.setOnClickListener(clickListener);
         btnBluetoothOld.setOnClickListener(clickListener);
+        btnPrinterWire.setOnClickListener(clickListener);
     }
 
     @Override
@@ -190,6 +210,54 @@ public class ChoosePrinterActivity extends AppCompatActivity implements View.OnC
         }
     }
 
+    void printerWireConnect(){
+        // Connect printer using USB
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                pendingIntent = PendingIntent.getBroadcast(ChoosePrinterActivity.this, 0, new Intent(ACTION_USB_PERMISSION), PendingIntent.FLAG_MUTABLE);
+                KmUsb.getInstance().starUsbDevicesDiscovery();
+                usbDevices = KmUsb.getInstance().usbDevices;
+
+                Log.e("", "onCreate: " + usbDevices.size());
+
+                for (i = 0; i < usbDevices.size(); i++) {
+                    Log.e("", "onCreate: " + usbDevices.get(i).getDeviceId());
+                    Log.e("", "onCreate: " + usbDevices.get(i).getProductName());
+                    if (usbDevices.get(i).getProductName().equals("KM-202MQ")) {
+                        connectPrinter(i);
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                connectPrinter(i);
+                            }
+                        }, 5000);
+
+                        break;
+                    }
+                }
+            }
+        }, 1000);
+    }
+
+    private void connectPrinter(int k) {
+        KmUsb.getInstance().usbConnect(usbDevices.get(k), new KmUsbAdapter() {
+            @Override
+            public void connectSuccess() {
+                super.connectSuccess();
+
+                Log.e("", "connectSuccess: ");
+
+                System.out.println("Connect Success");
+                KmCreate.getInstance().connectType = 3;
+                KmCreate.getInstance().connectName = usbDevices.get(k).getSerialNumber();
+                btnTestPrint.setVisibility(View.VISIBLE);
+                tvName.setText(usbDevices.get(i).getProductName());
+
+            }
+        });
+    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -208,11 +276,13 @@ public class ChoosePrinterActivity extends AppCompatActivity implements View.OnC
                 break;
 
             case R.id.button_bluetooth:
+                btnTestPrint.setVisibility(View.GONE);
                 llBluetoothPrinter.setVisibility(View.VISIBLE);
                 if (printPort != null) {
                     printPort.disconnect();
                     isConnected = false;
                 }
+                btnChoosePrinter.setVisibility(View.VISIBLE);
                 visibleButtonBluetooth();
                 choosePrinter("BlueTooth");
                 bluetoothVersion("New");
@@ -223,16 +293,28 @@ public class ChoosePrinterActivity extends AppCompatActivity implements View.OnC
                 break;
 
             case R.id.button_bluetooth_old:
+                btnTestPrint.setVisibility(View.GONE);
                 llBluetoothPrinter.setVisibility(View.VISIBLE);
                 if (printPort != null) {
                     printPort.disconnect();
                     isConnected = false;
                 }
+                btnChoosePrinter.setVisibility(View.VISIBLE);
                 visibleButtonBluetoothOld();
                 choosePrinter("BlueTooth");
                 bluetoothVersion("Old");
                 getVersionPrinter();
                // shareBluetoothName("");
+                SharedPreferencesType("");
+                tvName.setText("មិនទាន់ភ្ជាប់ម៉ាស៊ីនព្រីន");
+                break;
+            case R.id.button_printer_wire:
+                btnTestPrint.setVisibility(View.GONE);
+                llBluetoothPrinter.setVisibility(View.VISIBLE);
+                visibleButtonPrinterWire();
+                printerWireConnect();
+                choosePrinter("printer_wire");
+                btnChoosePrinter.setVisibility(View.GONE);
                 SharedPreferencesType("");
                 tvName.setText("មិនទាន់ភ្ជាប់ម៉ាស៊ីនព្រីន");
                 break;
@@ -243,18 +325,28 @@ public class ChoosePrinterActivity extends AppCompatActivity implements View.OnC
         btnMobilePrinter.setBackground(getDrawable(R.color.colorAccent));
         btnBluetooth.setBackground(getDrawable(R.color.colorAsbestos));
         btnBluetoothOld.setBackground(getDrawable(R.color.colorAsbestos));
+        btnPrinterWire.setBackgroundColor(getResources().getColor(R.color.colorAsbestos));
     }
 
     private void visibleButtonBluetooth() {
         btnMobilePrinter.setBackgroundColor(getResources().getColor(R.color.colorAsbestos));
         btnBluetooth.setBackgroundColor(getResources().getColor(R.color.colorAccent));
         btnBluetoothOld.setBackgroundColor(getResources().getColor(R.color.colorAsbestos));
+        btnPrinterWire.setBackgroundColor(getResources().getColor(R.color.colorAsbestos));
     }
 
     private void visibleButtonBluetoothOld() {
         btnMobilePrinter.setBackgroundColor(getResources().getColor(R.color.colorAsbestos));
         btnBluetooth.setBackgroundColor(getResources().getColor(R.color.colorAsbestos));
         btnBluetoothOld.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+        btnPrinterWire.setBackgroundColor(getResources().getColor(R.color.colorAsbestos));
+    }
+
+    private void visibleButtonPrinterWire() {
+        btnMobilePrinter.setBackgroundColor(getResources().getColor(R.color.colorAsbestos));
+        btnBluetooth.setBackgroundColor(getResources().getColor(R.color.colorAsbestos));
+        btnBluetoothOld.setBackgroundColor(getResources().getColor(R.color.colorAsbestos));
+        btnPrinterWire.setBackgroundColor(getResources().getColor(R.color.colorAccent));
     }
 
     private void gotoHome() {
@@ -407,6 +499,12 @@ public class ChoosePrinterActivity extends AppCompatActivity implements View.OnC
                // connectedPrinter();
                // showDeviceDataList();
             }
+        } else if(getName.equals("printer_wire")){
+            visibleButtonPrinterWire();
+            btnChoosePrinter.setVisibility(View.GONE);
+            //
+            printerWireConnect();
+
         } else {
             llBluetoothPrinter.setVisibility(View.GONE);
             btnMobilePrinter.setBackground(getDrawable(R.color.colorAccent));

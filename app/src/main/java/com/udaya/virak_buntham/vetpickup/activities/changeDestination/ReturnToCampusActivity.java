@@ -24,6 +24,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.udaya.virak_buntham.vetpickup.R;
+import com.udaya.virak_buntham.vetpickup.activities.HomeActivity;
 import com.udaya.virak_buntham.vetpickup.activities.ScanChangeDestinationActivity;
 import com.udaya.virak_buntham.vetpickup.activities.SelectionActivity;
 import com.udaya.virak_buntham.vetpickup.adapters.ChangeAdapter;
@@ -222,7 +223,7 @@ public class ReturnToCampusActivity extends AppCompatActivity implements View.On
                             SharedPreferences pref1 = getSharedPreferences("BluetoothVersion", MODE_PRIVATE);
                             String getVersion = pref1.getString("Version", "");
 
-                            if(getVersion.equals("New")){
+                            if(getVersion.equals("New") || !HomeActivity.printerWire.isEmpty()){
                                 PrintLayoutActivity.desFromPint = response.body().getDestinationFrom();
                                 PrintLayoutActivity.toPint = response.body().getDestinationTo();
                                 PrintLayoutActivity.qrTotalAmountPrint = response.body().getTotal_amount();

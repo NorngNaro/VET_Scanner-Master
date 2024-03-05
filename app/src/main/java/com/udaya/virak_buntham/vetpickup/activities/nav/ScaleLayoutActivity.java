@@ -53,6 +53,7 @@ import com.printer.psdk.tspl.args.TPage;
 import com.printer.psdk.tspl.args.TText;
 import com.udaya.virak_buntham.vetpickup.R;
 import com.udaya.virak_buntham.vetpickup.activities.HomeActivity;
+import com.udaya.virak_buntham.vetpickup.activities.ScanActivity;
 import com.udaya.virak_buntham.vetpickup.bluetoothprinter.DeviceListActivity;
 import com.udaya.virak_buntham.vetpickup.bluetoothprinter.DeviceShowListActivity;
 import com.udaya.virak_buntham.vetpickup.bluetoothprinter.km_mode.BluetoothActivity;
@@ -125,14 +126,26 @@ public class ScaleLayoutActivity extends AppCompatActivity {
             Send.writeData( UseCase.tspl_case2(ScaleLayoutActivity.this, loadBitmapFromViewSimple(viewQr)), ScaleLayoutActivity.this);
         });
 
-        if(KmCreate.getInstance().connectType == 1){
-            SharedPreferences prefs = getSharedPreferences("Printer", MODE_PRIVATE);
-            String printerName = prefs.getString("PrinterType", "");
-            tvName.setText(printerName);
-            Toast.makeText(this, "ការភ្ជាប់ជោគជ័យ", Toast.LENGTH_SHORT).show();
-        } else {
-            tvName.setText("ភ្ជាប់បរាជ័យ");
-            Toast.makeText(this, "ការតភ្ជាប់បរាជ័យ", Toast.LENGTH_SHORT).show();
+
+        SharedPreferences pref = getSharedPreferences("PrinterName", MODE_PRIVATE);
+        if(pref.getString("Name", "").equals("printer_wire")){
+            if(HomeActivity.printerWire.isEmpty()){
+                tvName.setText("ភ្ជាប់បរាជ័យ");
+                Toast.makeText(this, "ការតភ្ជាប់បរាជ័យ", Toast.LENGTH_SHORT).show();
+            }else {
+                Toast.makeText(this, "ការភ្ជាប់ជោគជ័យ", Toast.LENGTH_SHORT).show();
+                tvName.setText(HomeActivity.printerWire);
+            }
+        }else {
+            if(KmCreate.getInstance().connectType == 1){
+                SharedPreferences prefs = getSharedPreferences("Printer", MODE_PRIVATE);
+                String printerName = prefs.getString("PrinterType", "");
+                tvName.setText(printerName);
+                Toast.makeText(this, "ការភ្ជាប់ជោគជ័យ", Toast.LENGTH_SHORT).show();
+            } else {
+                tvName.setText("ភ្ជាប់បរាជ័យ");
+                Toast.makeText(this, "ការតភ្ជាប់បរាជ័យ", Toast.LENGTH_SHORT).show();
+            }
         }
 
         setSizeDefault();

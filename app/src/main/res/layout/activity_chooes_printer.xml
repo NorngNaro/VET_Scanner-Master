@@ -61,7 +61,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:background="@color/colorAsbestos"
-                android:text="BLUETOOTH"
+                android:text="BLUETOOTH V2.0"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"
                 android:textStyle="bold" />
@@ -69,7 +69,7 @@
 
         <!--New version-->
         <LinearLayout
-            android:visibility="gone"
+            android:visibility="visible"
             android:layout_marginTop="10dp"
             android:background="@drawable/outline_background"
             android:orientation="horizontal"
@@ -87,7 +87,33 @@
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:background="@color/colorAsbestos"
-                android:text="BLUETOOTH"
+                android:text="BLUETOOTH V3.0"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!--New version wire-->
+        <LinearLayout
+            android:visibility="visible"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/outline_background"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:padding="5dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_gravity="center"
+                android:src="@drawable/ic_bluetooth_printer_wire"
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
+            <Button
+                android:id="@+id/button_printer_wire"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="@color/colorAsbestos"
+                android:text="PRINTER V3.0 (ប្រើខ្សែរ)"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"
                 android:textStyle="bold" />

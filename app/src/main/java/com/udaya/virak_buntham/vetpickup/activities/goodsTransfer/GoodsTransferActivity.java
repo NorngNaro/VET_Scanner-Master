@@ -1005,10 +1005,13 @@ public class GoodsTransferActivity extends AppBaseActivity implements View.OnCli
                             if (getName.equals("BlueTooth")) {
                                 if(getVersion.equals("New")){
                                     gotoPrintReceipt(printData, CityPrintActivity.class);
-                                }else {
+                                } else {
                                     gotoPrintReceipt(printData, CityPrintOldActivity.class);
                                 }
-                            } else {
+                            } else if(getName.equals("printer_wire")) {
+                                gotoPrintReceipt(printData, CityPrintActivity.class);
+                            }
+                            else {
                                 gotoPrintReceipt(printData, PrintGTReceiptActivity.class);
                             }
                         } else {

@@ -224,14 +224,25 @@ public class LocalPrintActivity extends AppCompatActivity implements OnInternetC
         KmUsb.getInstance().openUsb(this);
 
 
-        if(KmCreate.getInstance().connectType == 1){
-            SharedPreferences prefs = getSharedPreferences("Printer", MODE_PRIVATE);
-            String printerName = prefs.getString("PrinterType", "");
-            tvName.setText(printerName);
-            Toast.makeText(this, "ការភ្ជាប់ជោគជ័យ", Toast.LENGTH_SHORT).show();
-        } else {
-            tvName.setText("ភ្ជាប់បរាជ័យ");
-            Toast.makeText(this, "ការតភ្ជាប់បរាជ័យ", Toast.LENGTH_SHORT).show();
+        SharedPreferences pref = getSharedPreferences("PrinterName", MODE_PRIVATE);
+        if(pref.getString("Name", "").equals("printer_wire")){
+            if(HomeActivity.printerWire.isEmpty()){
+                tvName.setText("ភ្ជាប់បរាជ័យ");
+                Toast.makeText(this, "ការតភ្ជាប់បរាជ័យ", Toast.LENGTH_SHORT).show();
+            }else {
+                Toast.makeText(this, "ការភ្ជាប់ជោគជ័យ", Toast.LENGTH_SHORT).show();
+                tvName.setText(HomeActivity.printerWire);
+            }
+        }else {
+            if(KmCreate.getInstance().connectType == 1){
+                SharedPreferences prefs = getSharedPreferences("Printer", MODE_PRIVATE);
+                String printerName = prefs.getString("PrinterType", "");
+                tvName.setText(printerName);
+                Toast.makeText(this, "ការភ្ជាប់ជោគជ័យ", Toast.LENGTH_SHORT).show();
+            } else {
+                tvName.setText("ភ្ជាប់បរាជ័យ");
+                Toast.makeText(this, "ការតភ្ជាប់បរាជ័យ", Toast.LENGTH_SHORT).show();
+            }
         }
 
         try {
@@ -302,14 +313,25 @@ public class LocalPrintActivity extends AppCompatActivity implements OnInternetC
     @Override
     protected void onRestart() {
         super.onRestart();
-        if(KmCreate.getInstance().connectType == 1){
-            SharedPreferences prefs = getSharedPreferences("Printer", MODE_PRIVATE);
-            String printerName = prefs.getString("PrinterType", "");
-            tvName.setText(printerName);
-            Toast.makeText(this, "ការភ្ជាប់ជោគជ័យ", Toast.LENGTH_SHORT).show();
-        } else {
-            tvName.setText("ភ្ជាប់បរាជ័យ");
-            Toast.makeText(this, "ការតភ្ជាប់បរាជ័យ", Toast.LENGTH_SHORT).show();
+        SharedPreferences pref = getSharedPreferences("PrinterName", MODE_PRIVATE);
+        if(pref.getString("Name", "").equals("printer_wire")){
+            if(HomeActivity.printerWire.isEmpty()){
+                tvName.setText("ភ្ជាប់បរាជ័យ");
+                Toast.makeText(this, "ការតភ្ជាប់បរាជ័យ", Toast.LENGTH_SHORT).show();
+            }else {
+                Toast.makeText(this, "ការភ្ជាប់ជោគជ័យ", Toast.LENGTH_SHORT).show();
+                tvName.setText(HomeActivity.printerWire);
+            }
+        }else {
+            if(KmCreate.getInstance().connectType == 1){
+                SharedPreferences prefs = getSharedPreferences("Printer", MODE_PRIVATE);
+                String printerName = prefs.getString("PrinterType", "");
+                tvName.setText(printerName);
+                Toast.makeText(this, "ការភ្ជាប់ជោគជ័យ", Toast.LENGTH_SHORT).show();
+            } else {
+                tvName.setText("ភ្ជាប់បរាជ័យ");
+                Toast.makeText(this, "ការតភ្ជាប់បរាជ័យ", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 

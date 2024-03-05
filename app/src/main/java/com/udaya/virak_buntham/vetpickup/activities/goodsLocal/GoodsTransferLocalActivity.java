@@ -49,6 +49,7 @@ import com.udaya.virak_buntham.vetpickup.activities.PrintGTReceiptLocalActivity;
 import com.udaya.virak_buntham.vetpickup.activities.SelectionLocalActivity;
 import com.udaya.virak_buntham.vetpickup.activities.goodsTransfer.GoodsTransferActivity;
 import com.udaya.virak_buntham.vetpickup.base.AppBaseActivity;
+import com.udaya.virak_buntham.vetpickup.bluetoothprinter.CityPrintActivity;
 import com.udaya.virak_buntham.vetpickup.bluetoothprinter.LocalPrintActivity;
 import com.udaya.virak_buntham.vetpickup.bluetoothprinter.LocalPrintOldActivity;
 import com.udaya.virak_buntham.vetpickup.listeners.OnInternetConnectionListener;
@@ -976,7 +977,9 @@ public class GoodsTransferLocalActivity extends AppBaseActivity implements View.
                                 }else {
                                     gotoPrintReceipt(printData, LocalPrintOldActivity.class);
                                 }
-                            } else {
+                            } else if(getName.equals("printer_wire")) {
+                                gotoPrintReceipt(printData, CityPrintActivity.class);
+                            }else {
                                 gotoPrintReceipt(printData, PrintGTReceiptLocalActivity.class);
                             }
                             Log.d("codeDataCollect==>", "" + response.body().getCollectCod());

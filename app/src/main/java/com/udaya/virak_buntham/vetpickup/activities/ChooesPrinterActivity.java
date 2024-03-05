@@ -1,3 +1,4 @@
+/*
 package com.udaya.virak_buntham.vetpickup.activities;
 
 import android.annotation.SuppressLint;
@@ -44,6 +45,9 @@ public class ChooesPrinterActivity extends AppCompatActivity implements View.OnC
     String getName = "";
     @BindView(R.id.llBluetoothPrinter)
     LinearLayout llBluetoothPrinter;
+
+    @BindView(R.id.button_printer_wire)
+    Button btnPrinterWire;
     @BindView(R.id.btnChooesPrinter)
     Button btnChoosePrinter;
     TextView tvName;
@@ -70,15 +74,17 @@ public class ChooesPrinterActivity extends AppCompatActivity implements View.OnC
         RegisterActionBar.registerSupportToolbar(this, mToolbar);
         registerOnClick(this);
         getChoosePrinter();
-        btnChoosePrinter.setOnClickListener(v -> choosePrinter()
+        btnChoosePrinter.setOnClickListener(v -> choosePrinter());
 
-        );
+        Log.e("TAG", "onCreate: meeeeeeeeee" );
+
     }
 
     private void registerOnClick(View.OnClickListener clickListener) {
         btnMobilePrinter.setOnClickListener(clickListener);
         btnBluetooth.setOnClickListener(clickListener);
         btnBluetoothOld.setOnClickListener(clickListener);
+        btnPrinterWire.setOnClickListener(clickListener);
     }
 
     @Override
@@ -102,6 +108,7 @@ public class ChooesPrinterActivity extends AppCompatActivity implements View.OnC
 
     @Override
     public void onClick(View v) {
+        Log.e("", "onClick: " + v.getId() );
         switch (v.getId()) {
             case R.id.button_mobile_printer:
                 if (printPort == null) {
@@ -118,7 +125,6 @@ public class ChooesPrinterActivity extends AppCompatActivity implements View.OnC
                 break;
 
             case R.id.button_bluetooth:
-                Log.e("", "onClick: asdfdf" );
                 llBluetoothPrinter.setVisibility(View.VISIBLE);
                 if (printPort != null) {
                     printPort.disconnect();
@@ -129,15 +135,19 @@ public class ChooesPrinterActivity extends AppCompatActivity implements View.OnC
                 break;
 
             case R.id.button_bluetooth_old:
-                Log.e("", "onClick: asdfdf" );
                 llBluetoothPrinter.setVisibility(View.VISIBLE);
                 if (printPort != null) {
                     printPort.disconnect();
                     isConnected = false;
                 }
-                Toast.makeText(this, "askjdff", Toast.LENGTH_SHORT).show();
                 visibleButtonBluetoothOld();
                 choosePrinter("BlueTooth");
+                break;
+
+            case R.id.button_printer_wire:
+                Log.e("", "onClick: " );
+                llBluetoothPrinter.setVisibility(View.VISIBLE);
+                visibleButtonPrinterWire();
                 break;
         }
     }
@@ -164,13 +174,22 @@ public class ChooesPrinterActivity extends AppCompatActivity implements View.OnC
     private void visibleButtonBluetooth() {
         btnMobilePrinter.setBackgroundColor(getResources().getColor(R.color.colorAsbestos));
         btnBluetooth.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+        btnPrinterWire.setBackgroundColor(getResources().getColor(R.color.colorAsbestos));
         btnBluetoothOld.setBackgroundColor(getResources().getColor(R.color.colorAsbestos));
     }
 
     private void visibleButtonBluetoothOld() {
         btnMobilePrinter.setBackgroundColor(getResources().getColor(R.color.colorAsbestos));
         btnBluetooth.setBackgroundColor(getResources().getColor(R.color.colorAsbestos));
+        btnPrinterWire.setBackgroundColor(getResources().getColor(R.color.colorAccent));
         btnBluetoothOld.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+    }
+
+    private void visibleButtonPrinterWire() {
+        btnMobilePrinter.setBackgroundColor(getResources().getColor(R.color.colorAsbestos));
+        btnBluetooth.setBackgroundColor(getResources().getColor(R.color.colorAsbestos));
+        btnBluetoothOld.setBackgroundColor(getResources().getColor(R.color.colorAsbestos));
+        btnPrinterWire.setBackgroundColor(getResources().getColor(R.color.colorAccent));
     }
 
     private void gotoHome() {
@@ -209,6 +228,11 @@ public class ChooesPrinterActivity extends AppCompatActivity implements View.OnC
         } else if (getName.equals("NoDevice")) {
             btnMobilePrinter.setBackground(getDrawable(R.color.colorAsbestos));
             btnBluetooth.setBackground(getDrawable(R.color.colorAccent));
+            llBluetoothPrinter.setVisibility(View.VISIBLE);
+            connectedPrinter();
+        }else if (getName.equals("printerWire")) {
+            btnMobilePrinter.setBackground(getDrawable(R.color.colorAsbestos));
+            btnPrinterWire.setBackground(getDrawable(R.color.colorAccent));
             llBluetoothPrinter.setVisibility(View.VISIBLE);
             connectedPrinter();
         } else {
@@ -307,3 +331,4 @@ public class ChooesPrinterActivity extends AppCompatActivity implements View.OnC
         }
     }
 }
+*/
