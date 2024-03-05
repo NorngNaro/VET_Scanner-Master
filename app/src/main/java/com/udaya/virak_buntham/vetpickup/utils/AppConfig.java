@@ -14,11 +14,9 @@ public class AppConfig {
     private static final String BASE_URL_SEND_SMS = "https://oc.utlog.net/mobiles/";
 
     //QA
-/*
-    private static final String BASE_URL_PRODUCTION = "https://qacl.udaya-tech.com/VETPickup/v4/";
-    private static final String BASE_URL_REPORT_PUBLIC = "https://qacl.udaya-tech.com/0412_VETOc_Web/mobiles/";
-    private static final String BASE_URL_SEND_SMS = "https://qacl.udaya-tech.com/0412_VETOc_Web/mobiles/";
-*/
+//    private static final String BASE_URL_PRODUCTION = "https://qacl.udaya-tech.com/VETPickup/v4/";
+//    private static final String BASE_URL_REPORT_PUBLIC = "https://qacl.udaya-tech.com/0412_VETOc_Web/mobiles/";
+//    private static final String BASE_URL_SEND_SMS = "https://qacl.udaya-tech.com/0412_VETOc_Web/mobiles/";
 
     //Locale
 /*
@@ -68,8 +66,6 @@ public class AppConfig {
     public void getLocationData(Context context) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             gpsTracker = new GpsTrackerLocation(context);
-        }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (gpsTracker.canGetLocation()) {
                 double letData = gpsTracker.getLatitude();
                 double longData = gpsTracker.getLongitude();
